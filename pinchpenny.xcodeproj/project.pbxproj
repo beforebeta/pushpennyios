@@ -658,7 +658,7 @@
 				ORGANIZATIONNAME = tackable;
 				TargetAttributes = {
 					64385DE518186E0E0089E62B = {
-						DevelopmentTeam = 32NY32P8RV;
+						DevelopmentTeam = R69327U8TK;
 					};
 					64385E0618186E0E0089E62B = {
 						TestTargetID = 64385DE518186E0E0089E62B;
@@ -939,7 +939,7 @@
 					/Users/edlucero/Documents/DeveloperHat/pushpenny/code/tackablecore.6/pinchpenny/3rdparty/Flurry,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "DBE8B76A-5AF1-48C5-9F1F-A0F08F280CFB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -949,8 +949,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tackable (32NY32P8RV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tackable (32NY32P8RV)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Digital First Ventures, LLC (R69327U8TK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Digital First Ventures, LLC (R69327U8TK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pinchpenny/pinchpenny-Prefix.pch";
 				INFOPLIST_FILE = "pinchpenny/pinchpenny-Info.plist";
@@ -960,7 +960,7 @@
 					/Users/edlucero/Documents/DeveloperHat/pushpenny/code/tackablecore.6/pinchpenny/3rdparty/Flurry,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5383A9DC-C9CF-4865-9BEC-10E38456F66C";
+				PROVISIONING_PROFILE = "87B5181C-2E29-48D2-A5B1-EF6981C56D8E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
