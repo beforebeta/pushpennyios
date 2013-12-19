@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "Flurry.h"
+#import "UAirship.h"
+#import "UAConfig.h"
+#import "UAPush.h"
 
 @implementation AppDelegate
 
@@ -20,6 +23,16 @@
         [[NSUserDefaults standardUserDefaults]setObject:uuid forKey:kUUID];
         [Flurry setUserID:uuid];
     }
+    // Populate AirshipConfig.plist with your app's info from https://go.urbanairship.com
+    // or set runtime properties here.
+    UAConfig *config = [UAConfig defaultConfig];
+    // Call takeOff (which creates the UAirship singleton)
+    [UAirship takeOff:config];
+    // Request a custom set of notification types
+    [UAPush shared].notificationTypes = (UIRemoteNotificationTypeBadge |
+                                         UIRemoteNotificationTypeSound |
+                                         UIRemoteNotificationTypeAlert |
+                                         UIRemoteNotificationTypeNewsstandContentAvailability);
     if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
         [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
         [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:151.0/255.0 green:71.0/255.0 blue:48.0/255.0 alpha:1.0]];

@@ -3,37 +3,37 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icon-29.png",
+      "filename" : "Pushpenny-29_coin.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Icon-29@2x.png",
+      "filename" : "Pushpenny-58_coin.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Icon-40@2x.png",
+      "filename" : "Pushpenny-80_coin.png",
       "scale" : "2x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
-      "filename" : "icon-57.png",
+      "filename" : "Pushpenny-57_coin.png",
       "scale" : "1x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
-      "filename" : "icon114.png",
+      "filename" : "Pushpenny-114_coin.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icon-60@2x.png",
+      "filename" : "Pushpenny-120_coin.png",
       "scale" : "2x"
     }
   ],

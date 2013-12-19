@@ -12,9 +12,9 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="PQH-Si-chD">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.64993223852040816" green="0.30893271140102896" blue="0.20926536265750081" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.29411764709999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.64993223850000004" green="0.3089327114" blue="0.20926536270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.93725490196078431" green="0.29411764705882354" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="pbe-4n-VDL" kind="relationship" relationship="rootViewController" id="2sU-xp-UTc"/>
