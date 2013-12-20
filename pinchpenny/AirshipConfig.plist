@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>inProduction</key>
-	<false/>
+	<true/>
 	<key>developmentAppKey</key>
 	<string>nDJGWgAuS4Wh1MALOQrNrA</string>
 	<key>developmentAppSecret</key>
 	<string>WLExPilFRtyCdO-NASmCvw</string>
 	<key>productionAppKey</key>
-	<string></string>
+	<string>QV6xZjEGRsKGf3wNFbo-ew</string>
 	<key>productionAppSecret</key>
-	<string></string>
+	<string>-rnI5k38TpG8kH8FqqIGDg</string>
 </dict>
 </plist>
