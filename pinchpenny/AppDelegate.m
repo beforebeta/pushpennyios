@@ -59,6 +59,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    application.applicationIconBadgeNumber = 0;
 //    if ([[NSUserDefaults standardUserDefaults]objectForKey:kUUID]) {
 //        NSString *uuid = [[NSUserDefaults standardUserDefaults]objectForKey:kUUID];
 //        [Flurry setUserID:uuid];
