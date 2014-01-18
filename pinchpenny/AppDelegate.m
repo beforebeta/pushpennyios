@@ -12,6 +12,12 @@
 #import "UAConfig.h"
 #import "UAPush.h"
 #import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAITracker.h"
+#import "GAIFields.h"
+#import "GAILogger.h"
+#import "GAITrackedViewController.h"
+
 
 @implementation AppDelegate
 
@@ -53,6 +59,8 @@
     }
     return YES;
 }
+
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -87,4 +95,33 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *) url {
+    
+    NSString *urlString = [url absoluteString];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithName:@"tracker"
+                                                        trackingId:@"UA-XXXX-Y"];
+    
+    // setCampaignParametersFromUrl: parses Google Analytics campaign ("UTM")
+    // parameters from a string url into a Map that can be set on a Tracker.
+    GAIDictionaryBuilder *hitParams = [[GAIDictionaryBuilder alloc] init];
+    
+    // Set campaign data on the map, not the tracker directly because it only
+    // needs to be sent once.
+    [[hitParams setCampaignParametersFromUrl:urlString] build];
+    
+    // Campaign source is the only required campaign field. If previous call
+    // did not set a campaign source, use the hostname as a referrer instead.
+    /*
+    if(![hitParams valueForKey:kGAICampaignSource]) && [url host].length !=0) {
+        // Set campaign data on the map, not the tracker.
+        [hitParams set:kGAICampaignMedium
+                 value:@"referrer"];
+        [hitParams set:kGAICampaignSource
+                 value:[url host]];
+    }*/
+    
+    [tracker send:[[[GAIDictionaryBuilder createAppView] setAll:hitParams] build]];
+    return YES;
+}
 @end
