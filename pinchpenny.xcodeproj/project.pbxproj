@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E12CFAC188A47CC0056D138 /* libUAirship-3.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E12CF46188A47CC0056D138 /* libUAirship-3.0.2.a */; };
 		5E12CFAE188A47CC0056D138 /* UABarButtonSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF53188A47CC0056D138 /* UABarButtonSegmentedControl.m */; };
 		5E12CFAF188A47CC0056D138 /* UABeveledLoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF55188A47CC0056D138 /* UABeveledLoadingIndicator.m */; };
 		5E12CFB0188A47CC0056D138 /* UADateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF57188A47CC0056D138 /* UADateUtils.m */; };
@@ -63,7 +62,6 @@
 		5E12CFE2188A47CC0056D138 /* UAPushSettingsTokenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA6188A47CC0056D138 /* UAPushSettingsTokenView.xib */; };
 		5E12CFE3188A47CC0056D138 /* UAPushSettingsUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA7188A47CC0056D138 /* UAPushSettingsUserInfoView.xib */; };
 		5E12CFE4188A47CC0056D138 /* UAPushSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA8188A47CC0056D138 /* UAPushSettingsView.xib */; };
-		5E12CFE5188A47CC0056D138 /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E12CFAB188A47CC0056D138 /* libFlurry_4.3.0.a */; };
 		5E18CF8B1839959E00C29776 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E18CF8A1839959E00C29776 /* Security.framework */; };
 		5E62A0F3183DC78A00F0396B /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F0183DC78A00F0396B /* Quicksand-Bold.ttf */; };
 		5E62A0F4183DC78A00F0396B /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F1183DC78A00F0396B /* Quicksand-Light.ttf */; };
@@ -172,6 +170,8 @@
 		FE28A5551824317D00025315 /* btn-map.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A54D1824317D00025315 /* btn-map.png */; };
 		FE28A5561824317D00025315 /* btn-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A54E1824317D00025315 /* btn-map@2x.png */; };
 		FE28A5571824317D00025315 /* btn-share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A54F1824317D00025315 /* btn-share@2x.png */; };
+		FE2D2BF0188A576A001E8105 /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2D2BEF188A576A001E8105 /* libFlurry_4.3.0.a */; };
+		FE2D2BF1188A57AA001E8105 /* libUAirship-3.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E12CF46188A47CC0056D138 /* libUAirship-3.0.2.a */; };
 		FE7114051832A43C001F1410 /* btn_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7114041832A43C001F1410 /* btn_list@2x.png */; };
 		FE7114071832A445001F1410 /* btn_globe.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7114061832A445001F1410 /* btn_globe.png */; };
 		FE71140A1832A92A001F1410 /* btn_refresh2.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7114081832A92A001F1410 /* btn_refresh2.png */; };
@@ -321,7 +321,6 @@
 		5E12CFA7188A47CC0056D138 /* UAPushSettingsUserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UAPushSettingsUserInfoView.xib; sourceTree = "<group>"; };
 		5E12CFA8188A47CC0056D138 /* UAPushSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UAPushSettingsView.xib; sourceTree = "<group>"; };
 		5E12CFAA188A47CC0056D138 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		5E12CFAB188A47CC0056D138 /* libFlurry_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.0.a; sourceTree = "<group>"; };
 		5E18CF8A1839959E00C29776 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5E62A0F0183DC78A00F0396B /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		5E62A0F1183DC78A00F0396B /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
@@ -471,6 +470,7 @@
 		FE28A54D1824317D00025315 /* btn-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-map.png"; sourceTree = "<group>"; };
 		FE28A54E1824317D00025315 /* btn-map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-map@2x.png"; sourceTree = "<group>"; };
 		FE28A54F1824317D00025315 /* btn-share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-share@2x.png"; sourceTree = "<group>"; };
+		FE2D2BEF188A576A001E8105 /* libFlurry_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.0.a; sourceTree = "<group>"; };
 		FE7114041832A43C001F1410 /* btn_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_list@2x.png"; sourceTree = "<group>"; };
 		FE7114061832A445001F1410 /* btn_globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_globe.png; sourceTree = "<group>"; };
 		FE7114081832A92A001F1410 /* btn_refresh2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_refresh2.png; sourceTree = "<group>"; };
@@ -484,7 +484,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E12CFE5188A47CC0056D138 /* libFlurry_4.3.0.a in Frameworks */,
+				FE2D2BF1188A57AA001E8105 /* libUAirship-3.0.2.a in Frameworks */,
 				5EDAAFF5186272CF0068907A /* CoreTelephony.framework in Frameworks */,
 				5EDAAFF3186272C60068907A /* libsqlite3.dylib in Frameworks */,
 				5EDAAFF1186272B60068907A /* libz.dylib in Frameworks */,
@@ -498,8 +498,8 @@
 				646803C718187DE8002FD8F1 /* QuartzCore.framework in Frameworks */,
 				64385DEC18186E0E0089E62B /* CoreGraphics.framework in Frameworks */,
 				64385DEE18186E0E0089E62B /* UIKit.framework in Frameworks */,
+				FE2D2BF0188A576A001E8105 /* libFlurry_4.3.0.a in Frameworks */,
 				64385DEA18186E0E0089E62B /* Foundation.framework in Frameworks */,
-				5E12CFAC188A47CC0056D138 /* libUAirship-3.0.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,7 +792,7 @@
 			isa = PBXGroup;
 			children = (
 				5E12CFAA188A47CC0056D138 /* Flurry.h */,
-				5E12CFAB188A47CC0056D138 /* libFlurry_4.3.0.a */,
+				FE2D2BEF188A576A001E8105 /* libFlurry_4.3.0.a */,
 			);
 			path = Flurry;
 			sourceTree = "<group>";
@@ -1483,9 +1483,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/edlucero/Documents/DeveloperHat/pushpenny/code/tackablecore.6/pinchpenny/3rdparty/Flurry,
-					/Users/edlucero/Dropbox/TACKABLE/pinchpenny/code/rc1/pushpennyios/pinchpenny/3rdparty/Airship,
-					/Users/edlucero/Dropbox/TACKABLE/pinchpenny/code/rc1/pushpennyios/pinchpenny/3rdparty/Flurry,
+					"/Users/tackable/Desktop/git-pp/pushpennyios/pinchpenny/3rdparty/Flurry",
+					"/Users/tackable/Desktop/git-pp/pushpennyios/pinchpenny/3rdparty/Airship",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1512,9 +1511,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/edlucero/Documents/DeveloperHat/pushpenny/code/tackablecore.6/pinchpenny/3rdparty/Flurry,
-					/Users/edlucero/Dropbox/TACKABLE/pinchpenny/code/rc1/pushpennyios/pinchpenny/3rdparty/Airship,
-					/Users/edlucero/Dropbox/TACKABLE/pinchpenny/code/rc1/pushpennyios/pinchpenny/3rdparty/Flurry,
+					"/Users/tackable/Desktop/git-pp/pushpennyios/pinchpenny/3rdparty/Flurry",
+					"/Users/tackable/Desktop/git-pp/pushpennyios/pinchpenny/3rdparty/Airship",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
