@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "GAITrackedViewController.h"
+
 
 @protocol FilterCategoryViewControllerDelegate;
 
-@interface FilterCategoryViewController : UIViewController
+@interface FilterCategoryViewController : GAITrackedViewController
 <UITableViewDataSource
 ,UITableViewDelegate
 ,UITextFieldDelegate

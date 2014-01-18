@@ -51,9 +51,12 @@
     point.subtitle = _strAddress;
     [_mapView addAnnotation:point];
     [_mapView selectAnnotation:point animated:YES];
+    self.screenName = @"DealOnMap Screen";
+
 }
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     [Flurry logPageView];
 }
 

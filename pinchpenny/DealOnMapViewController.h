@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-@interface DealOnMapViewController : UIViewController
+#import "GAITrackedViewController.h"
+
+
+@interface DealOnMapViewController : GAITrackedViewController
 <MKMapViewDelegate>
 
 @property (nonatomic, strong) NSString *strLat;

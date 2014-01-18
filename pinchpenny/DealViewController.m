@@ -13,6 +13,8 @@
 #import "WebViewController.h"
 #import "DealOnMapViewController.h"
 #import "Flurry.h"
+#import "GAITrackedViewController.h"
+#import "GAI.h"
 
 @interface DealViewController ()
 {
@@ -65,9 +67,11 @@
     [self parseDictionaryIntoIVars];
     flagDescriptionFullyVisible = NO;
     
+    self.screenName = @"Deal Screen";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [Flurry logPageView];
 }
 

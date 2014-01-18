@@ -10,8 +10,10 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "FilterCategoryViewController.h"
+#import "GAITrackedViewController.h"
 
-@interface HomeViewController : UIViewController
+
+@interface HomeViewController : GAITrackedViewController
 <
 UIScrollViewDelegate
 ,CLLocationManagerDelegate

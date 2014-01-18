@@ -110,6 +110,8 @@
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
     [self getUserLocation];
+    self.screenName = @"Home Screen";
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,6 +122,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [Flurry logPageView];
+    [super viewDidAppear:animated];
+
 }
 
 #pragma mark - Actions

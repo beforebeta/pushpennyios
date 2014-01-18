@@ -64,9 +64,13 @@
     if (!self.geocoder) {
         self.geocoder = [[CLGeocoder alloc] init];
     }
+    
+    self.screenName = @"Category Screen";
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self highlightCategoryRow];
     [Flurry logPageView];
     _textFieldKeyword.text = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedCategory];
