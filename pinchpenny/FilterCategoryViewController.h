@@ -24,4 +24,6 @@
 @protocol FilterCategoryViewControllerDelegate <NSObject>
 - (void)fetchDealFeedwithPaging:(BOOL)usePaging;
 - (void)setBackgroundImageWithURL:(NSString *)imageURL;
+@optional
+- (void)fetchCategoryKeywordFeed;
 @end

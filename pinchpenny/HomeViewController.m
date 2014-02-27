@@ -104,17 +104,17 @@
     
     self.tableView.backgroundView = backgroundView;
     self.tableView.contentInset = UIEdgeInsetsMake(kDKTableViewDefaultContentInset, 0, 0, 0);
+    // Add Geture for navigation bar
+    UITapGestureRecognizer *navSingleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navSingleTap)];
+    navSingleTap.numberOfTapsRequired = 1;
+    [[self.navigationController.navigationBar.subviews objectAtIndex:1] setUserInteractionEnabled:YES];
+    [[self.navigationController.navigationBar.subviews objectAtIndex:1] addGestureRecognizer:navSingleTap];
     // Network
     [_activityIndicator startAnimating];
     // Location
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
     [self getUserLocation];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -190,6 +190,11 @@
         }
     } ];
 
+}
+
+-(void)navSingleTap;
+{
+    [_tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
 
 #pragma mark - Network

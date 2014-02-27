@@ -21,6 +21,7 @@
     NSMutableArray *filterCategoryArray;
     NSMutableArray *filterKeywordsArray;
     NSString *defaultBackgroundURL;
+    BOOL hasCategoryImage;
     
     // Location
     CLLocationManager *locationManagerUser;
@@ -99,7 +100,7 @@
     NSString *feedURL = [NSString stringWithFormat:@"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we&location=%@,%@&id=%@",strLat,strLon,strUUID];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:feedURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"fetchCategoryKeywordFeed [%@]", responseObject);
+        NSLog(@"fetchCategoryKeywordFeed [%@]", responseObject);
         defaultBackgroundURL = [responseObject objectForKey:@"default_image"];
         filterCategoryArray = [NSMutableArray arrayWithArray:[responseObject objectForKey:@"search_categories"]];
         filterKeywordsArray =[NSMutableArray arrayWithArray:[responseObject objectForKey:@"popular_nearby"]];
@@ -150,7 +151,11 @@
                                             strLocationForFlurry, @"Location",
                                             nil];
                 [Flurry logEvent:@"Search" withParameters:dictionary];
-                [_delegate setBackgroundImageWithURL:defaultBackgroundURL];
+                if (hasCategoryImage) {
+                    [_delegate setBackgroundImageWithURL:defaultBackgroundURL];
+                } else {
+                    [_delegate fetchCategoryKeywordFeed];
+                }
                 [_delegate fetchDealFeedwithPaging:NO];
                 [self actionDismissView:Nil];
             } else {
@@ -234,9 +239,16 @@
                                             strLocationForFlurry, @"Location",
                                             nil];
                 [Flurry logEvent:@"Search" withParameters:dictionary];
-                [_delegate setBackgroundImageWithURL:defaultBackgroundURL];
+                if (hasCategoryImage) {
+                    [_delegate setBackgroundImageWithURL:defaultBackgroundURL];
+                } else {
+                    [_delegate fetchCategoryKeywordFeed];
+                }
+                
                 [_delegate fetchDealFeedwithPaging:NO];
                 [self actionDismissView:Nil];
+            } else {
+                [self fetchCategoryKeywordFeed];
             }
         } else {
             _textFieldLocation.text = @"";
@@ -279,12 +291,17 @@
     NSString *strImageURL =[[[[filterCategoryArray objectAtIndex:indexPath.section]objectForKey:@"list"]objectAtIndex:indexPath.row] objectForKey:@"image"];
     if ([strImageURL isKindOfClass:[NSNull class]]) {
         strImageURL = defaultBackgroundURL;
+        hasCategoryImage = YES;
     }
     NSLog(@"strImageURL = [%@]",strImageURL);
     [[NSUserDefaults standardUserDefaults] setObject:strSearchKeyword forKey:kUserDefinedCategory];
     [[NSUserDefaults standardUserDefaults] setObject:strSearchKeyword forKey:kUserDefinedCategorySlug];
     [[NSUserDefaults standardUserDefaults] setObject:strImageURL forKey:kUserDefinedCategoryImage];
-    [_delegate setBackgroundImageWithURL:strImageURL];
+    if (hasCategoryImage) {
+        [_delegate setBackgroundImageWithURL:defaultBackgroundURL];
+    } else {
+        [_delegate fetchCategoryKeywordFeed];
+    };
     NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                 strSearchKeyword, @"Keyword",
                                 _textFieldLocation, @"Location",
@@ -368,7 +385,11 @@
                                         strCityState, @"Location",
                                         nil];
             [Flurry logEvent:@"Search" withParameters:dictionary];
-            [_delegate setBackgroundImageWithURL:defaultBackgroundURL];
+            if (hasCategoryImage) {
+                [_delegate setBackgroundImageWithURL:defaultBackgroundURL];
+            } else {
+                [_delegate fetchCategoryKeywordFeed];
+            }
             [_delegate fetchDealFeedwithPaging:NO];
             [self actionDismissView:Nil];
         } else {
