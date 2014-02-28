@@ -78,6 +78,8 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"All Deals" forKey:kUserDefinedCategory];
         [[NSUserDefaults standardUserDefaults] setObject:@"all" forKey:kUserDefinedCategorySlug];
     }
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+
     pageNumber = 1;
     flagFeedFetchInProgress = NO;
     // UI
