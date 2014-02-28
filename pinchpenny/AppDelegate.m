@@ -92,7 +92,6 @@
     //configure iRate
     [iRate sharedInstance].daysUntilPrompt = 2;
     [iRate sharedInstance].usesUntilPrompt = 2;
-    [iRate sharedInstance].previewMode = YES;
 }
 
 @end
