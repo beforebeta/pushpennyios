@@ -111,6 +111,7 @@
     navSingleTap.numberOfTapsRequired = 1;
     [[self.navigationController.navigationBar.subviews objectAtIndex:1] setUserInteractionEnabled:YES];
     [[self.navigationController.navigationBar.subviews objectAtIndex:1] addGestureRecognizer:navSingleTap];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navSingleTap) name:@"touchStatusBarClick" object:nil];
     // Network
     [_activityIndicator startAnimating];
     // Location
