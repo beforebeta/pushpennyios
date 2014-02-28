@@ -291,6 +291,8 @@
     NSString *strImageURL =[[[[filterCategoryArray objectAtIndex:indexPath.section]objectForKey:@"list"]objectAtIndex:indexPath.row] objectForKey:@"image"];
     if ([strImageURL isKindOfClass:[NSNull class]]) {
         strImageURL = defaultBackgroundURL;
+    } else {
+        defaultBackgroundURL = strImageURL;
         hasCategoryImage = YES;
     }
     NSLog(@"strImageURL = [%@]",strImageURL);
