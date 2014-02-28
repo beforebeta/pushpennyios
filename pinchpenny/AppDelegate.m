@@ -11,6 +11,7 @@
 #import "UAirship.h"
 #import "UAConfig.h"
 #import "UAPush.h"
+#import "iRate.h"
 
 @implementation AppDelegate
 
@@ -83,6 +84,15 @@
 
 - (void) touchStatusBar {
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"touchStatusBarClick" object:nil];
+}
+
++ (void)initialize
+{
+    NSLog(@"initialize");
+    //configure iRate
+    [iRate sharedInstance].daysUntilPrompt = 2;
+    [iRate sharedInstance].usesUntilPrompt = 2;
+    [iRate sharedInstance].previewMode = YES;
 }
 
 @end

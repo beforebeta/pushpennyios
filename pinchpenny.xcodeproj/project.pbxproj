@@ -68,6 +68,7 @@
 		5E62A0F3183DC78A00F0396B /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F0183DC78A00F0396B /* Quicksand-Bold.ttf */; };
 		5E62A0F4183DC78A00F0396B /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F1183DC78A00F0396B /* Quicksand-Light.ttf */; };
 		5E62A0F5183DC78A00F0396B /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F2183DC78A00F0396B /* Quicksand-Regular.ttf */; };
+		5E9AEE1418C14E98001A9822 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9AEE1318C14E98001A9822 /* iRate.m */; };
 		5EA4CF29184EFCA10089300D /* CellDealImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4CF28184EFCA10089300D /* CellDealImage.m */; };
 		5ED8219A183B26890045DDF7 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED82178183B26890045DDF7 /* AFHTTPRequestOperation.m */; };
 		5ED8219B183B26890045DDF7 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8217A183B26890045DDF7 /* AFHTTPRequestOperationManager.m */; };
@@ -326,6 +327,8 @@
 		5E62A0F0183DC78A00F0396B /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		5E62A0F1183DC78A00F0396B /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		5E62A0F2183DC78A00F0396B /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		5E9AEE1218C14E98001A9822 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		5E9AEE1318C14E98001A9822 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
 		5EA4CF27184EFCA10089300D /* CellDealImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellDealImage.h; sourceTree = "<group>"; };
 		5EA4CF28184EFCA10089300D /* CellDealImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellDealImage.m; sourceTree = "<group>"; };
 		5ED82177183B26890045DDF7 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -959,6 +962,8 @@
 		646803BB18187DD0002FD8F1 /* 3rdparty */ = {
 			isa = PBXGroup;
 			children = (
+				5E9AEE1218C14E98001A9822 /* iRate.h */,
+				5E9AEE1318C14E98001A9822 /* iRate.m */,
 				5E12CF15188A47CC0056D138 /* Airship */,
 				5E12CFA9188A47CC0056D138 /* Flurry */,
 				5ED82176183B26890045DDF7 /* AFNetworking */,
@@ -1291,6 +1296,7 @@
 				5E12CFB1188A47CC0056D138 /* UAInboxAlertHandler.m in Sources */,
 				5E12CFC9188A47CC0056D138 /* UAMapPresentationController.m in Sources */,
 				FE0CAF4A18198D5400CF816C /* Style-View-RoundCornerShadow.m in Sources */,
+				5E9AEE1418C14E98001A9822 /* iRate.m in Sources */,
 				5E12CFCD188A47CC0056D138 /* UAPushSettingsAliasViewController.m in Sources */,
 				5ED821A2183B26890045DDF7 /* AFURLSessionManager.m in Sources */,
 				5ED8219C183B26890045DDF7 /* AFHTTPSessionManager.m in Sources */,
