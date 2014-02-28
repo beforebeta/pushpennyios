@@ -1483,9 +1483,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/edlucero/Documents/DeveloperHat/pushpenny/code/tackablecore.6/pinchpenny/3rdparty/Flurry,
-					/Users/edlucero/Dropbox/TACKABLE/pinchpenny/code/rc1/pushpennyios/pinchpenny/3rdparty/Airship,
-					/Users/edlucero/Dropbox/TACKABLE/pinchpenny/code/rc1/pushpennyios/pinchpenny/3rdparty/Flurry,
+					"$(SRCROOT)/pinchpenny/3rdparty/Flurry",
+					"$(SRCROOT)/pinchpenny/3rdparty/Airship",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1512,9 +1511,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/edlucero/Documents/DeveloperHat/pushpenny/code/tackablecore.6/pinchpenny/3rdparty/Flurry,
-					/Users/edlucero/Dropbox/TACKABLE/pinchpenny/code/rc1/pushpennyios/pinchpenny/3rdparty/Airship,
-					/Users/edlucero/Dropbox/TACKABLE/pinchpenny/code/rc1/pushpennyios/pinchpenny/3rdparty/Flurry,
+					"$(SRCROOT)/pinchpenny/3rdparty/Flurry",
+					"$(SRCROOT)/pinchpenny/3rdparty/Airship",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
