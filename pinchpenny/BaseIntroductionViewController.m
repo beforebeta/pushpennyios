@@ -9,12 +9,16 @@
 #import "BaseIntroductionViewController.h"
 #import "SwipeView.h"
 
+#define TOTAL_BOARDING_PAGES (6)
+
 @interface BaseIntroductionViewController ()
 <SwipeViewDataSource, SwipeViewDelegate>
 @property (weak, nonatomic) IBOutlet SwipeView *swipeView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, strong) NSMutableArray *items;
 @property (weak, nonatomic) IBOutlet UIView *btnStart;
+@property (weak, nonatomic) IBOutlet UIButton *btnGetStarted;
+@property (weak, nonatomic) IBOutlet UIButton *btnSkip;
 @end
 
 @implementation BaseIntroductionViewController
@@ -27,11 +31,11 @@
     _swipeView.delegate = self;
     _swipeView.dataSource = self;
 	self.items = [NSMutableArray array];
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < TOTAL_BOARDING_PAGES; i++)
     {
         [_items addObject:@(i)];
     }
-    self.pageControl.numberOfPages = 6;
+    self.pageControl.numberOfPages = TOTAL_BOARDING_PAGES;
     self.pageControl.currentPage = 0;
     _btnStart.hidden = YES;
 }
@@ -44,6 +48,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)actionSkip:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 #pragma mark -
 #pragma mark iCarousel methods
 
@@ -55,8 +64,11 @@
 
 - (void)swipeViewDidEndDecelerating:(SwipeView *)swipeView;
 {
-    NSLog(@"swipeViewDidEndDecelerating = [%i]",swipeView.currentPage);
     self.pageControl.currentPage = swipeView.currentPage;
+    if (swipeView.currentPage >=(TOTAL_BOARDING_PAGES-1)) {
+        _btnGetStarted.hidden = NO;
+        _btnSkip.hidden = YES;
+    } 
 }
 
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view

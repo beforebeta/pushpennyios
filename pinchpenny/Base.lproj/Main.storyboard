@@ -998,7 +998,7 @@
                                 <rect key="frame" x="0.0" y="349" width="320" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-iY-Jvt">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-iY-Jvt">
                                         <rect key="frame" x="73" y="43" width="174" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
@@ -1015,6 +1015,16 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS9-PV-0wh">
+                                        <rect key="frame" x="245" y="99" width="65" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="skip_btn.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionSkip:" destination="7KO-BQ-JlW" eventType="touchUpInside" id="WyT-r3-yna"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1033,6 +1043,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnGetStarted" destination="Xii-iY-Jvt" id="egr-8h-DBa"/>
+                        <outlet property="btnSkip" destination="cS9-PV-0wh" id="VGj-GR-OEM"/>
                         <outlet property="pageControl" destination="i4E-Z7-1nt" id="qzi-67-frN"/>
                         <outlet property="swipeView" destination="KKG-2m-wMp" id="lCz-wL-ZyC"/>
                     </connections>
@@ -1052,6 +1064,7 @@
         <image name="btn_refresh.png" width="40" height="40"/>
         <image name="getstarted_btn.png" width="1268" height="363"/>
         <image name="nav-annotation.png" width="40" height="40"/>
+        <image name="skip_btn.png" width="468" height="188"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
