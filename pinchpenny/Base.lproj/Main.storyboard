@@ -262,6 +262,7 @@
                         <outlet property="viewMenuLocationCategoryOnMap" destination="pxV-OZ-7Qw" id="4DV-kz-hgd"/>
                         <outlet property="viewTableHeader" destination="lxO-oV-pzr" id="8c2-zb-qDD"/>
                         <segue destination="D4t-Ul-CLK" kind="push" identifier="DetailView2" id="JDu-hG-h9a"/>
+                        <segue destination="7KO-BQ-JlW" kind="modal" identifier="boarding" animates="NO" id="dJC-j7-1ts"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hj-kY-MHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -969,14 +970,87 @@
             </objects>
             <point key="canvasLocation" x="1784" y="1141"/>
         </scene>
+        <!--Base Introduction View Controller-->
+        <scene sceneID="Hyj-s5-eh3">
+            <objects>
+                <viewController id="7KO-BQ-JlW" customClass="BaseIntroductionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="amO-06-9w4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uwc-by-lFk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qUz-Lv-k12">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="bg-street.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="GjD-MP-8AL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKG-2m-wMp" customClass="SwipeView">
+                                <rect key="frame" x="0.0" y="-88" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="g3z-ae-hMg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXh-xZ-fjm">
+                                <rect key="frame" x="0.0" y="349" width="320" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-iY-Jvt">
+                                        <rect key="frame" x="73" y="43" width="174" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                        <state key="normal" image="getstarted_btn.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionDismiss:" destination="7KO-BQ-JlW" eventType="touchUpInside" id="5Yw-pX-bvq"/>
+                                        </connections>
+                                    </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="i4E-Z7-1nt">
+                                        <rect key="frame" x="82" y="91" width="158" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="5vb-Vl-oRV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uwc-by-lFk" firstAttribute="top" secondItem="KKG-2m-wMp" secondAttribute="bottom" id="9Uu-ag-ecF"/>
+                            <constraint firstAttribute="trailing" secondItem="KKG-2m-wMp" secondAttribute="trailing" id="LXu-zu-krD"/>
+                            <constraint firstAttribute="trailing" secondItem="LXh-xZ-fjm" secondAttribute="trailing" id="Sv6-Hq-kgm"/>
+                            <constraint firstItem="Uwc-by-lFk" firstAttribute="top" secondItem="LXh-xZ-fjm" secondAttribute="bottom" id="T0u-wv-kfL"/>
+                            <constraint firstItem="KKG-2m-wMp" firstAttribute="leading" secondItem="qUz-Lv-k12" secondAttribute="leading" id="TeW-cJ-UlO"/>
+                            <constraint firstItem="LXh-xZ-fjm" firstAttribute="leading" secondItem="qUz-Lv-k12" secondAttribute="leading" id="r2P-u7-ENl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="i4E-Z7-1nt" id="qzi-67-frN"/>
+                        <outlet property="swipeView" destination="KKG-2m-wMp" id="lCz-wL-ZyC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dqQ-GS-8XT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655" y="6"/>
+        </scene>
     </scenes>
     <resources>
         <image name="PP_splash.png" width="640" height="1136"/>
+        <image name="bg-street.jpg" width="90" height="25"/>
         <image name="btn-magnifyGlass.png" width="64" height="64"/>
         <image name="btn_compass.png" width="40" height="40"/>
         <image name="btn_globe.png" width="40" height="40"/>
         <image name="btn_list.png" width="40" height="40"/>
         <image name="btn_refresh.png" width="40" height="40"/>
+        <image name="getstarted_btn.png" width="1268" height="363"/>
         <image name="nav-annotation.png" width="40" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

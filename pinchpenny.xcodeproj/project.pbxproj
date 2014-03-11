@@ -66,6 +66,20 @@
 		5E12CFE4188A47CC0056D138 /* UAPushSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA8188A47CC0056D138 /* UAPushSettingsView.xib */; };
 		5E12CFE5188A47CC0056D138 /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E12CFAB188A47CC0056D138 /* libFlurry_4.3.0.a */; };
 		5E18CF8B1839959E00C29776 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E18CF8A1839959E00C29776 /* Security.framework */; };
+		5E60DDF718CF83740041DA2E /* BaseIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E60DDF618CF83740041DA2E /* BaseIntroductionViewController.m */; };
+		5E60DE0618CF84190041DA2E /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDF918CF84190041DA2E /* dot.png */; };
+		5E60DE0718CF84190041DA2E /* getstarted_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFA18CF84190041DA2E /* getstarted_btn.png */; };
+		5E60DE0818CF84190041DA2E /* highlighted_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFB18CF84190041DA2E /* highlighted_dot.png */; };
+		5E60DE0918CF84190041DA2E /* login_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFC18CF84190041DA2E /* login_btn.png */; };
+		5E60DE0A18CF84190041DA2E /* onboarding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFD18CF84190041DA2E /* onboarding1.png */; };
+		5E60DE0B18CF84190041DA2E /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFE18CF84190041DA2E /* onboarding2.png */; };
+		5E60DE0C18CF84190041DA2E /* onboarding3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFF18CF84190041DA2E /* onboarding3.png */; };
+		5E60DE0D18CF84190041DA2E /* onboarding4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0018CF84190041DA2E /* onboarding4.png */; };
+		5E60DE0E18CF84190041DA2E /* onboarding5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0118CF84190041DA2E /* onboarding5.png */; };
+		5E60DE0F18CF84190041DA2E /* onboarding6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0218CF84190041DA2E /* onboarding6.png */; };
+		5E60DE1018CF84190041DA2E /* signup_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0318CF84190041DA2E /* signup_btn.png */; };
+		5E60DE1118CF84190041DA2E /* skip_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0418CF84190041DA2E /* skip_btn.png */; };
+		5E60DE1218CF84190041DA2E /* swipe_to_see.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0518CF84190041DA2E /* swipe_to_see.png */; };
 		5E62A0F3183DC78A00F0396B /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F0183DC78A00F0396B /* Quicksand-Bold.ttf */; };
 		5E62A0F4183DC78A00F0396B /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F1183DC78A00F0396B /* Quicksand-Light.ttf */; };
 		5E62A0F5183DC78A00F0396B /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F2183DC78A00F0396B /* Quicksand-Regular.ttf */; };
@@ -310,6 +324,21 @@
 		5E12CFAA188A47CC0056D138 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		5E12CFAB188A47CC0056D138 /* libFlurry_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.0.a; sourceTree = "<group>"; };
 		5E18CF8A1839959E00C29776 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5E60DDF518CF83740041DA2E /* BaseIntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseIntroductionViewController.h; sourceTree = "<group>"; };
+		5E60DDF618CF83740041DA2E /* BaseIntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseIntroductionViewController.m; sourceTree = "<group>"; };
+		5E60DDF918CF84190041DA2E /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
+		5E60DDFA18CF84190041DA2E /* getstarted_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getstarted_btn.png; sourceTree = "<group>"; };
+		5E60DDFB18CF84190041DA2E /* highlighted_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highlighted_dot.png; sourceTree = "<group>"; };
+		5E60DDFC18CF84190041DA2E /* login_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn.png; sourceTree = "<group>"; };
+		5E60DDFD18CF84190041DA2E /* onboarding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding1.png; sourceTree = "<group>"; };
+		5E60DDFE18CF84190041DA2E /* onboarding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2.png; sourceTree = "<group>"; };
+		5E60DDFF18CF84190041DA2E /* onboarding3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding3.png; sourceTree = "<group>"; };
+		5E60DE0018CF84190041DA2E /* onboarding4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding4.png; sourceTree = "<group>"; };
+		5E60DE0118CF84190041DA2E /* onboarding5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding5.png; sourceTree = "<group>"; };
+		5E60DE0218CF84190041DA2E /* onboarding6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding6.png; sourceTree = "<group>"; };
+		5E60DE0318CF84190041DA2E /* signup_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signup_btn.png; sourceTree = "<group>"; };
+		5E60DE0418CF84190041DA2E /* skip_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip_btn.png; sourceTree = "<group>"; };
+		5E60DE0518CF84190041DA2E /* swipe_to_see.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe_to_see.png; sourceTree = "<group>"; };
 		5E62A0F0183DC78A00F0396B /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		5E62A0F1183DC78A00F0396B /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		5E62A0F2183DC78A00F0396B /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
@@ -754,6 +783,26 @@
 			path = Flurry;
 			sourceTree = "<group>";
 		};
+		5E60DDF818CF84190041DA2E /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				5E60DDF918CF84190041DA2E /* dot.png */,
+				5E60DDFA18CF84190041DA2E /* getstarted_btn.png */,
+				5E60DDFB18CF84190041DA2E /* highlighted_dot.png */,
+				5E60DDFC18CF84190041DA2E /* login_btn.png */,
+				5E60DDFD18CF84190041DA2E /* onboarding1.png */,
+				5E60DDFE18CF84190041DA2E /* onboarding2.png */,
+				5E60DDFF18CF84190041DA2E /* onboarding3.png */,
+				5E60DE0018CF84190041DA2E /* onboarding4.png */,
+				5E60DE0118CF84190041DA2E /* onboarding5.png */,
+				5E60DE0218CF84190041DA2E /* onboarding6.png */,
+				5E60DE0318CF84190041DA2E /* signup_btn.png */,
+				5E60DE0418CF84190041DA2E /* skip_btn.png */,
+				5E60DE0518CF84190041DA2E /* swipe_to_see.png */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 		5E62A0EF183DC78A00F0396B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -824,6 +873,8 @@
 				64A83ACD18289E2200A64AF7 /* WebViewController.m */,
 				64EDCE5D1833354E00A76E4C /* DealOnMapViewController.h */,
 				64EDCE5E1833354E00A76E4C /* DealOnMapViewController.m */,
+				5E60DDF518CF83740041DA2E /* BaseIntroductionViewController.h */,
+				5E60DDF618CF83740041DA2E /* BaseIntroductionViewController.m */,
 				5EA4CF27184EFCA10089300D /* CellDealImage.h */,
 				5EA4CF28184EFCA10089300D /* CellDealImage.m */,
 				64A7C963181A1B70002303E3 /* Constants.h */,
@@ -928,6 +979,7 @@
 		FE0CAF4D18198F2E00CF816C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				5E60DDF818CF84190041DA2E /* Intro */,
 				641061D61838610B00B5BD28 /* nav-annotation.png */,
 				641061D71838610B00B5BD28 /* nav-annotation@2x.png */,
 				FE0CAF56181999D900CF816C /* Buttons */,
@@ -1088,7 +1140,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E60DE0E18CF84190041DA2E /* onboarding5.png in Resources */,
 				5E12CFBB188A47CC0056D138 /* down.png in Resources */,
+				5E60DE0B18CF84190041DA2E /* onboarding2.png in Resources */,
 				64A83B3D1829AF6000A64AF7 /* bg-wine.jpg in Resources */,
 				64EE7D46181AE86300207E0E /* bg-denver_h960.jpg in Resources */,
 				FE0CAF5E18199AD500CF816C /* nav-list@2x.png in Resources */,
@@ -1106,11 +1160,13 @@
 				5EDAAFF7186273270068907A /* AirshipConfig.plist in Resources */,
 				FE0CAF5118198F2E00CF816C /* bg-denver.jpg in Resources */,
 				64A83B291829A82E00A64AF7 /* bg-yoga.jpg in Resources */,
+				5E60DE1118CF84190041DA2E /* skip_btn.png in Resources */,
 				FE7114051832A43C001F1410 /* btn_list@2x.png in Resources */,
 				5E12CFBE188A47CC0056D138 /* overlayCloseBtn@2x.png in Resources */,
 				5E12CFD5188A47CC0056D138 /* bottom-detail@2x.png in Resources */,
 				6468040D18188730002FD8F1 /* bg2.jpg in Resources */,
 				64A83B371829AF6000A64AF7 /* bg-party.jpg in Resources */,
+				5E60DE0C18CF84190041DA2E /* onboarding3.png in Resources */,
 				FE28A5541824317D00025315 /* btn-mail.png in Resources */,
 				6434E067182462C0005E00E7 /* btn_globe@2x.png in Resources */,
 				64017EDF1831F67100A3F5BA /* btn-magnifyGlass.png in Resources */,
@@ -1121,6 +1177,7 @@
 				64A83B281829A82E00A64AF7 /* bg-yoga_h960.jpg in Resources */,
 				6434E06918246433005E00E7 /* btn-disclosure.png in Resources */,
 				5E12CFC1188A47CC0056D138 /* UAInboxMessageListController.xib in Resources */,
+				5E60DE0618CF84190041DA2E /* dot.png in Resources */,
 				FE28A5561824317D00025315 /* btn-map@2x.png in Resources */,
 				FE28A5571824317D00025315 /* btn-share@2x.png in Resources */,
 				FE7114071832A445001F1410 /* btn_globe.png in Resources */,
@@ -1131,7 +1188,11 @@
 				FE28A5531824317D00025315 /* btn-help@2x.png in Resources */,
 				5E12CFDE188A47CC0056D138 /* UAPushSettingsAddTagViewController.xib in Resources */,
 				5E12CFC5188A47CC0056D138 /* up.png in Resources */,
+				5E60DE0918CF84190041DA2E /* login_btn.png in Resources */,
+				5E60DE0F18CF84190041DA2E /* onboarding6.png in Resources */,
 				FE28A5521824317D00025315 /* btn-help.png in Resources */,
+				5E60DE1218CF84190041DA2E /* swipe_to_see.png in Resources */,
+				5E60DE0818CF84190041DA2E /* highlighted_dot.png in Resources */,
 				5E12CFDC188A47CC0056D138 /* UAPushLocalization.bundle in Resources */,
 				5E12CFBF188A47CC0056D138 /* UAInboxLocalization.bundle in Resources */,
 				5E12CFDA188A47CC0056D138 /* UALocationSettingsViewController.xib in Resources */,
@@ -1141,6 +1202,7 @@
 				64385DF418186E0E0089E62B /* InfoPlist.strings in Resources */,
 				5E12CFD7188A47CC0056D138 /* middle-detail@2x.png in Resources */,
 				FE71140F1832A932001F1410 /* btn_compass2@2x.png in Resources */,
+				5E60DE0D18CF84190041DA2E /* onboarding4.png in Resources */,
 				5E12CFE3188A47CC0056D138 /* UAPushSettingsUserInfoView.xib in Resources */,
 				5E12CFBA188A47CC0056D138 /* check@2x.png in Resources */,
 				5E12CFC3188A47CC0056D138 /* uncheck.png in Resources */,
@@ -1159,8 +1221,10 @@
 				5E12CFE2188A47CC0056D138 /* UAPushSettingsTokenView.xib in Resources */,
 				64D6140518383C4300B036FD /* PP_splash.png in Resources */,
 				64017EE11831FD5F00A3F5BA /* btn-back.png in Resources */,
+				5E60DE0718CF84190041DA2E /* getstarted_btn.png in Resources */,
 				64DC34C91824806D0044F5F5 /* btn_refresh.png in Resources */,
 				641061D81838610B00B5BD28 /* nav-annotation.png in Resources */,
+				5E60DE1018CF84190041DA2E /* signup_btn.png in Resources */,
 				64385DFD18186E0E0089E62B /* Main.storyboard in Resources */,
 				FE71140E1832A932001F1410 /* btn_compass2.png in Resources */,
 				64DC34CB182481BD0044F5F5 /* btn_list.png in Resources */,
@@ -1176,6 +1240,7 @@
 				641061D91838610B00B5BD28 /* nav-annotation@2x.png in Resources */,
 				FE71140B1832A92A001F1410 /* btn_refresh2@2x.png in Resources */,
 				64D51BFA182864AC00964FA4 /* nav-map@2x.png in Resources */,
+				5E60DE0A18CF84190041DA2E /* onboarding1.png in Resources */,
 				5E12CFB9188A47CC0056D138 /* check.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1240,6 +1305,7 @@
 				5E9AEE1418C14E98001A9822 /* iRate.m in Sources */,
 				5E12CFCD188A47CC0056D138 /* UAPushSettingsAliasViewController.m in Sources */,
 				5E12CFB0188A47CC0056D138 /* UADateUtils.m in Sources */,
+				5E60DDF718CF83740041DA2E /* BaseIntroductionViewController.m in Sources */,
 				64EDCE5C1833183B00A76E4C /* DealViewController.m in Sources */,
 				64A7C965181A1B70002303E3 /* Constants.m in Sources */,
 				5EA4CF29184EFCA10089300D /* CellDealImage.m in Sources */,

@@ -68,6 +68,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if(YES){
+        [self performSegueWithIdentifier:@"boarding" sender:self];
+    }
     if (![[NSUserDefaults standardUserDefaults]objectForKey:kUUID]) {
         strUUID = [[NSUUID UUID] UUIDString];
     } else {
