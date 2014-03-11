@@ -28,7 +28,10 @@ extern NSString* const kUserDefinedCategory;
 extern NSString* const kUserDefinedCategoryImage;
 extern NSString* const kUserDefinedCategorySlug;
 
-
+extern NSString* const kDefaultLatitude;
+extern NSString* const kDefaultLongitude;
+extern NSString* const kDefaultLocation;
+extern NSString* const kDefaultBackgroundImage;
 
 extern NSString* const kUUID;
 

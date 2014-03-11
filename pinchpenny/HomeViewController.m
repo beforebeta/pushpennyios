@@ -315,12 +315,12 @@
     UIAlertView *errorAlert = [[UIAlertView alloc]
                                initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
-    [[NSUserDefaults standardUserDefaults]setObject:@"37.7749295" forKey:kUserDefinedLatitude];
-    [[NSUserDefaults standardUserDefaults]setObject:@"-122.4194155" forKey:kUserDefinedLongitude];
-    NSString *strCityState = [NSString stringWithFormat:@"Enter location to begin"];
+    [[NSUserDefaults standardUserDefaults]setObject:kDefaultLatitude forKey:kUserDefinedLatitude];
+    [[NSUserDefaults standardUserDefaults]setObject:kDefaultLongitude forKey:kUserDefinedLongitude];
+    NSString *strCityState = kDefaultLocation;
     [[NSUserDefaults standardUserDefaults]setObject:strCityState forKey:kUserDefinedCityState];
     flagUserLocationNotKnown = YES;
-    backgroundView.originalImage = [UIImage imageNamed:@"launch_640x1136"];
+    backgroundView.originalImage = [UIImage imageNamed:kDefaultBackgroundImage];
     [self updateFeedParameters];
     [self fetchDealFeedwithPaging:NO];
 }
