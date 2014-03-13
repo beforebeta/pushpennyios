@@ -71,7 +71,7 @@
     [super viewDidLoad];
     if(YES){
         [self performSegueWithIdentifier:@"boarding" sender:self];
-    }
+    } else 
     if (![[NSUserDefaults standardUserDefaults]objectForKey:kUUID]) {
         strUUID = [[NSUUID UUID] UUIDString];
     } else {
@@ -685,21 +685,21 @@
 }
 
 - (void)displayCategoryFromURL:(NSNotification *)notification {
-    NSLog(@"createNewChannelFromUserProfileTab %@", notification.object);
-    NSString *keyword = [notification.object objectForKey:@"keyword"];
+    NSLog(@"displayCategoryFromURL %@", notification.object);
+    NSString *keyword = [notification.object objectForKey:kAPNSKeyKeyword];
     if (keyword) {
         [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategory];
         [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategorySlug];
     }
-    NSString *strLat = [notification.object objectForKey:@"lat"];
+    NSString *strLat = [notification.object objectForKey:kAPNSKeyLatitude];
     if (strLat) {
         [[NSUserDefaults standardUserDefaults]setObject:strLat forKey:kUserDefinedLatitude];
     }
-    NSString *strLon = [notification.object objectForKey:@"lon"];
+    NSString *strLon = [notification.object objectForKey:kAPNSKeyLongitude];
     if (strLon) {
         [[NSUserDefaults standardUserDefaults]setObject:strLon forKey:kUserDefinedLongitude];
     }
-    NSString *strLocation = [notification.object objectForKey:@"location"];
+    NSString *strLocation = [notification.object objectForKey:kAPNSKeyLocation];
     if (strLocation) {
         [[NSUserDefaults standardUserDefaults]setObject:strLocation forKey:kUserDefinedCityState];
     }

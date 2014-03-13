@@ -19,9 +19,19 @@
 
  NSString* const kUUID=                     @"kUDID";
 
+ NSString* const kTutorialHasSeenBoarding   = @"kTutorialHasSeenBoarding";
+
 // Default fallback location is san francisco
  NSString* const kDefaultLatitude           = @"37.7749295";
  NSString* const kDefaultLongitude          = @"-122.4194155";
  NSString* const kDefaultLocation           = @"San Francisco, CA";
  NSString* const kDefaultBackgroundImage    = @"launch_640x1136.png";
+
+ NSString* const kAPNSKeyFeedType           = @"fd";
+ NSString* const kAPNSKeyKeyword            = @"ky";;
+ NSString* const kAPNSKeyLatitude           = @"lt";
+ NSString* const kAPNSKeyLongitude          = @"ln";
+ NSString* const kAPNSKeyLocation           = @"lc";
+
+ NSString* const kAPNSValueCategory         = @"ct";
 @end

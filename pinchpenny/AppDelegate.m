@@ -88,6 +88,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"didReceiveRemoteNotification [%@]", userInfo);
+    NSDictionary *messagecontent = userInfo;
+    NSString *feedtype = [messagecontent objectForKey:kAPNSKeyFeedType];
+    if (feedtype && [feedtype isEqualToString:kAPNSValueCategory]) {
+        NSString *keyword = [messagecontent objectForKey:kAPNSKeyKeyword];
+        NSString *latitude = [messagecontent objectForKey:kAPNSKeyLatitude];
+        NSString *longitude = [messagecontent objectForKey:kAPNSKeyLongitude];
+        NSString *location = [messagecontent objectForKey:kAPNSKeyLocation];
+        NSDictionary *dict = [[NSDictionary alloc]initWithObjectsAndKeys:
+                              keyword,kAPNSKeyKeyword,
+                              latitude,kAPNSKeyLatitude,
+                              longitude,kAPNSKeyLongitude,
+                              location,kAPNSKeyLocation,nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"handlingOpenURL" object:dict];
+    }
+}
+
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     NSLog(@"url recieved: %@", url);
     NSLog(@"query string: %@", [url query]);
@@ -97,8 +115,8 @@
         [url query]) {
         NSDictionary *dict = [self parseQueryString:[url query]];
         NSLog(@"query dict: %@", dict);
-        NSString *apicall = [dict objectForKey:@"feed"];
-        if ([apicall isEqualToString:@"category"]) {
+        NSString *apicall = [dict objectForKey:kAPNSKeyFeedType];
+        if ([apicall isEqualToString:kAPNSValueCategory]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"handlingOpenURL" object:dict];
         }
         
