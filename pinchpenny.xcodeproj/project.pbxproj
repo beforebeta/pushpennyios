@@ -1882,7 +1882,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/pinchpenny/3rdparty/Flurry",
 					"$(SRCROOT)/pinchpenny/3rdparty/Airship",
-					"/Users/tackable/Desktop/git-pp/pushpennyios/pinchpenny/3rdparty/GoogleAnalytics",
+					"$(SRCROOT)/pinchpenny/3rdparty/GoogleAnalytics",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1912,7 +1912,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/pinchpenny/3rdparty/Flurry",
 					"$(SRCROOT)/pinchpenny/3rdparty/Airship",
-					"/Users/tackable/Desktop/git-pp/pushpennyios/pinchpenny/3rdparty/GoogleAnalytics",
+					"$(SRCROOT)/pinchpenny/3rdparty/GoogleAnalytics",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

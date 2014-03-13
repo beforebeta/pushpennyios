@@ -160,8 +160,11 @@
                             [Flurry logEvent:@"Action_ViewDealsMap"];
                             _viewForTable.hidden = YES;
                             _viewMap.hidden = NO;
-                            self.screenName = [NSString stringWithFormat:@"Viewed Map"];
-
+                            NSString *strLocationForGAnalytics = [[NSUserDefaults standardUserDefaults]objectForKey:@"kUserDefinedCityState"];
+                            if (strLocationForGAnalytics) {
+                                self.screenName = [NSString stringWithFormat:@"Viewed Map - %@", strLocationForGAnalytics];
+                            }
+                            
                         }
                     }
      
@@ -200,7 +203,6 @@
                          placemark.country]);
             NSString *strCityState = [NSString stringWithFormat:@"%@, %@",placemark.locality,placemark.administrativeArea];
             [[NSUserDefaults standardUserDefaults]setObject:strCityState forKey:kUserDefinedCityState];
-            self.screenName = [NSString stringWithFormat:@"Map - %@", strCityState];
             [self updateFeedParameters];
         } else {
             NSLog(@"%@", error.debugDescription);
