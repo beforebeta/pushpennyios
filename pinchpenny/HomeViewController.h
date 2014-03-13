@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "FilterCategoryViewController.h"
+#import "BaseIntroductionViewController.h"
 
 @interface HomeViewController : UIViewController
 <
@@ -19,6 +20,7 @@ UIScrollViewDelegate
 ,UITableViewDataSource
 ,UITableViewDelegate
 ,FilterCategoryViewControllerDelegate
+,BaseIntroductionViewControllerDelegate
 >
 
 @end

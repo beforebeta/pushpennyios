@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>pinchpenny copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>pinchpenny.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5E60DE3A18D029B50041DA2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>64385DE518186E0E0089E62B</key>
 		<dict>
 			<key>primary</key>

@@ -658,6 +658,11 @@
         DealViewController *vc = (DealViewController *)segue.destinationViewController;
         vc.dealDict = selectedDictionary;
 
+    } else if ([[segue identifier] isEqualToString:@"boarding"])
+    {
+        BaseIntroductionViewController *vc = (BaseIntroductionViewController *)segue.destinationViewController;
+        vc.delegate = self;
+        
     }
 }
 

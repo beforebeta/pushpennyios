@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *btnStart;
 @property (weak, nonatomic) IBOutlet UIButton *btnGetStarted;
 @property (weak, nonatomic) IBOutlet UIButton *btnSkip;
+@property (weak, nonatomic) IBOutlet UIView *viewButtons;
 @end
 
 @implementation BaseIntroductionViewController
@@ -44,6 +45,9 @@
     return YES;
 }
 
+#pragma mark -
+#pragma mark Actions
+
 - (IBAction)actionDismiss:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -52,6 +56,35 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)actionDining:(id)sender {
+    NSLog(@"actionDining");
+    [self getFeedForKeyword:@"Dining & Nightlife"];
+}
+- (IBAction)actionEvents:(id)sender {
+    NSLog(@"actionEvents");
+    [self getFeedForKeyword:@"Activities & Events"];
+}
+- (IBAction)actionShopping:(id)sender {
+    NSLog(@"actionShopping");
+    [self getFeedForKeyword:@"Shopping & Services"];
+}
+- (IBAction)actionHealthBeauty:(id)sender {
+    NSLog(@"actionHealthBeauty");
+    [self getFeedForKeyword:@"Health & Beauty"];
+}
+- (IBAction)actionFitness:(id)sender {
+    NSLog(@"actionFitness");
+    [self getFeedForKeyword:@"Fitness"];
+}
+
+- (void)getFeedForKeyword:(NSString *)keycateogry;
+{
+    NSLog(@"getFeedForKeyword [%@]",keycateogry);
+    [[NSUserDefaults standardUserDefaults] setObject:keycateogry forKey:kUserDefinedCategory];
+    [[NSUserDefaults standardUserDefaults] setObject:keycateogry forKey:kUserDefinedCategorySlug];
+    [_delegate fetchDealFeedwithPaging:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark -
 #pragma mark iCarousel methods
@@ -66,9 +99,12 @@
 {
     self.pageControl.currentPage = swipeView.currentPage;
     if (swipeView.currentPage >=(TOTAL_BOARDING_PAGES-1)) {
-        _btnGetStarted.hidden = NO;
+        //_btnGetStarted.hidden = NO;
         _btnSkip.hidden = YES;
-    } 
+        [self.view bringSubviewToFront:_viewButtons];
+    } else {
+        [self.view sendSubviewToBack:_viewButtons];
+    }
 }
 
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view

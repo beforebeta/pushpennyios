@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseIntroductionViewController : UIViewController
+@protocol BaseIntroductionViewControllerDelegate;
 
+@interface BaseIntroductionViewController : UIViewController
+@property (nonatomic, weak) id<BaseIntroductionViewControllerDelegate> delegate;
 @end
+
+
+@protocol BaseIntroductionViewControllerDelegate <NSObject>
+@optional
+- (void)fetchDealFeedwithPaging:(BOOL)usePaging;
+@end
+
+

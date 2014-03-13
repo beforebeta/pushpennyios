@@ -81,6 +81,157 @@
 		5E60DE1118CF84190041DA2E /* skip_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0418CF84190041DA2E /* skip_btn.png */; };
 		5E60DE1218CF84190041DA2E /* swipe_to_see.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0518CF84190041DA2E /* swipe_to_see.png */; };
 		5E60DE1418CFA0880041DA2E /* launch_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE1318CFA0880041DA2E /* launch_640x1136.png */; };
+		5E60DE3D18D029B50041DA2E /* Style-View-Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CAF4018198D5400CF816C /* Style-View-Shadow.m */; };
+		5E60DE3E18D029B50041DA2E /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A7C97E181A48EF002303E3 /* MapPin.m */; };
+		5E60DE3F18D029B50041DA2E /* UAPushSettingsAddTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF87188A47CC0056D138 /* UAPushSettingsAddTagViewController.m */; };
+		5E60DE4018D029B50041DA2E /* UAInboxMessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF5B188A47CC0056D138 /* UAInboxMessageListCell.m */; };
+		5E60DE4118D029B50041DA2E /* UAInboxMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF5F188A47CC0056D138 /* UAInboxMessageViewController.m */; };
+		5E60DE4218D029B50041DA2E /* UAPushSettingsUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF91188A47CC0056D138 /* UAPushSettingsUserInfoViewController.m */; };
+		5E60DE4318D029B50041DA2E /* UAInboxAlertHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF59188A47CC0056D138 /* UAInboxAlertHandler.m */; };
+		5E60DE4418D029B50041DA2E /* UAMapPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF81188A47CC0056D138 /* UAMapPresentationController.m */; };
+		5E60DE4518D029B50041DA2E /* Style-View-RoundCornerShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CAF3E18198D5400CF816C /* Style-View-RoundCornerShadow.m */; };
+		5E60DE4618D029B50041DA2E /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9AEE1318C14E98001A9822 /* iRate.m */; };
+		5E60DE4718D029B50041DA2E /* UAPushSettingsAliasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF89188A47CC0056D138 /* UAPushSettingsAliasViewController.m */; };
+		5E60DE4818D029B50041DA2E /* UADateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF57188A47CC0056D138 /* UADateUtils.m */; };
+		5E60DE4918D029B50041DA2E /* BaseIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E60DDF618CF83740041DA2E /* BaseIntroductionViewController.m */; };
+		5E60DE4A18D029B50041DA2E /* DealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EDCE5B1833183B00A76E4C /* DealViewController.m */; };
+		5E60DE4B18D029B50041DA2E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A7C964181A1B70002303E3 /* Constants.m */; };
+		5E60DE4C18D029B50041DA2E /* CellDealImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4CF28184EFCA10089300D /* CellDealImage.m */; };
+		5E60DE4D18D029B50041DA2E /* Style-View-BorderedShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CAF3618198D5400CF816C /* Style-View-BorderedShadow.m */; };
+		5E60DE4E18D029B50041DA2E /* UAInboxMessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF5D188A47CC0056D138 /* UAInboxMessageListController.m */; };
+		5E60DE4F18D029B50041DA2E /* UABarButtonSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF53188A47CC0056D138 /* UABarButtonSegmentedControl.m */; };
+		5E60DE5018D029B50041DA2E /* Style-Btn-Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CAF3018198D5400CF816C /* Style-Btn-Gradient.m */; };
+		5E60DE5118D029B50041DA2E /* UAPushSettingsSoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF8B188A47CC0056D138 /* UAPushSettingsSoundsViewController.m */; };
+		5E60DE5218D029B50041DA2E /* UAPushNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF85188A47CC0056D138 /* UAPushNotificationHandler.m */; };
+		5E60DE5318D029B50041DA2E /* Style-View-Circle-Large.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CAF3818198D5400CF816C /* Style-View-Circle-Large.m */; };
+		5E60DE5418D029B50041DA2E /* Style-View-TileBG.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CAF4218198D5400CF816C /* Style-View-TileBG.m */; };
+		5E60DE5518D029B50041DA2E /* UAPushMoreSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF83188A47CC0056D138 /* UAPushMoreSettingsViewController.m */; };
+		5E60DE5618D029B50041DA2E /* UIWebView+UAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF67188A47CC0056D138 /* UIWebView+UAAdditions.m */; };
+		5E60DE5718D029B50041DA2E /* UABeveledLoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF55188A47CC0056D138 /* UABeveledLoadingIndicator.m */; };
+		5E60DE5818D029B50041DA2E /* DKLiveBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6468041018188BBA002FD8F1 /* DKLiveBlurView.m */; };
+		5E60DE5918D029B50041DA2E /* Style-View-Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CAF3A18198D5400CF816C /* Style-View-Circle.m */; };
+		5E60DE5A18D029B50041DA2E /* FilterCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D51BF5182859FB00964FA4 /* FilterCategoryViewController.m */; };
+		5E60DE5B18D029B50041DA2E /* Style-View-RoundCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CAF3C18198D5400CF816C /* Style-View-RoundCorner.m */; };
+		5E60DE5C18D029B50041DA2E /* UAPushUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF95188A47CC0056D138 /* UAPushUI.m */; };
+		5E60DE5D18D029B50041DA2E /* UAInboxUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF65188A47CC0056D138 /* UAInboxUI.m */; };
+		5E60DE5E18D029B50041DA2E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6434E06B18246489005E00E7 /* HomeViewController.m */; };
+		5E60DE5F18D029B50041DA2E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A83ACD18289E2200A64AF7 /* WebViewController.m */; };
+		5E60DE6018D029B50041DA2E /* Style-imageView-RoundCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CAF3418198D5400CF816C /* Style-imageView-RoundCorner.m */; };
+		5E60DE6118D029B50041DA2E /* UAPushSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF93188A47CC0056D138 /* UAPushSettingsViewController.m */; };
+		5E60DE6218D029B50041DA2E /* UAPushSettingsTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF8D188A47CC0056D138 /* UAPushSettingsTagsViewController.m */; };
+		5E60DE6318D029B50041DA2E /* UAPushSettingsTokenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF8F188A47CC0056D138 /* UAPushSettingsTokenViewController.m */; };
+		5E60DE6418D029B50041DA2E /* UALocationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF7F188A47CC0056D138 /* UALocationSettingsViewController.m */; };
+		5E60DE6518D029B50041DA2E /* DealOnMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EDCE5E1833354E00A76E4C /* DealOnMapViewController.m */; };
+		5E60DE6618D029B50041DA2E /* UAInboxOverlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF63188A47CC0056D138 /* UAInboxOverlayController.m */; };
+		5E60DE6718D029B50041DA2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64385DF918186E0E0089E62B /* AppDelegate.m */; };
+		5E60DE6818D029B50041DA2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64385DF518186E0E0089E62B /* main.m */; };
+		5E60DE6918D029B50041DA2E /* Style-Btn-RoundCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CAF3218198D5400CF816C /* Style-Btn-RoundCorner.m */; };
+		5E60DE6A18D029B50041DA2E /* UAInboxNavUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF61188A47CC0056D138 /* UAInboxNavUI.m */; };
+		5E60DE6B18D029B50041DA2E /* UALocationDemoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12CF7D188A47CC0056D138 /* UALocationDemoAnnotation.m */; };
+		5E60DE6D18D029B50041DA2E /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E12CFAB188A47CC0056D138 /* libFlurry_4.3.0.a */; };
+		5E60DE6E18D029B50041DA2E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDAAFF4186272CF0068907A /* CoreTelephony.framework */; };
+		5E60DE6F18D029B50041DA2E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDAAFF2186272C60068907A /* libsqlite3.dylib */; };
+		5E60DE7018D029B50041DA2E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDAAFF0186272B50068907A /* libz.dylib */; };
+		5E60DE7118D029B50041DA2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDAAFEE186272A40068907A /* SystemConfiguration.framework */; };
+		5E60DE7218D029B50041DA2E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E18CF8A1839959E00C29776 /* Security.framework */; };
+		5E60DE7318D029B50041DA2E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDAAFEC186272880068907A /* MobileCoreServices.framework */; };
+		5E60DE7418D029B50041DA2E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDAAFEA186272740068907A /* CFNetwork.framework */; };
+		5E60DE7518D029B50041DA2E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A7C961181A1AAD002303E3 /* CoreLocation.framework */; };
+		5E60DE7618D029B50041DA2E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B917431818E1E1000C222F /* MapKit.framework */; };
+		5E60DE7718D029B50041DA2E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6468041218188CFC002FD8F1 /* Accelerate.framework */; };
+		5E60DE7818D029B50041DA2E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646803C618187DE8002FD8F1 /* QuartzCore.framework */; };
+		5E60DE7918D029B50041DA2E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64385DEB18186E0E0089E62B /* CoreGraphics.framework */; };
+		5E60DE7A18D029B50041DA2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64385DED18186E0E0089E62B /* UIKit.framework */; };
+		5E60DE7B18D029B50041DA2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64385DE918186E0E0089E62B /* Foundation.framework */; };
+		5E60DE7C18D029B50041DA2E /* libUAirship-3.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E12CF46188A47CC0056D138 /* libUAirship-3.0.2.a */; };
+		5E60DE7D18D029B50041DA2E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D21313BF8A43EEADFFFDFD /* libPods.a */; };
+		5E60DE7F18D029B50041DA2E /* onboarding5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0118CF84190041DA2E /* onboarding5.png */; };
+		5E60DE8018D029B50041DA2E /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF6C188A47CC0056D138 /* down.png */; };
+		5E60DE8118D029B50041DA2E /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFE18CF84190041DA2E /* onboarding2.png */; };
+		5E60DE8218D029B50041DA2E /* nav-list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE0CAF5C18199AD500CF816C /* nav-list@2x.png */; };
+		5E60DE8318D029B50041DA2E /* UAPushSettingsSoundsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA4188A47CC0056D138 /* UAPushSettingsSoundsViewController.xib */; };
+		5E60DE8418D029B50041DA2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64385E0118186E0E0089E62B /* Images.xcassets */; };
+		5E60DE8518D029B50041DA2E /* btn_compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 64DC34C61824806D0044F5F5 /* btn_compass.png */; };
+		5E60DE8618D029B50041DA2E /* launch_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE1318CFA0880041DA2E /* launch_640x1136.png */; };
+		5E60DE8718D029B50041DA2E /* UAInboxMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF74188A47CC0056D138 /* UAInboxMessageViewController.xib */; };
+		5E60DE8818D029B50041DA2E /* btn-map.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A54D1824317D00025315 /* btn-map.png */; };
+		5E60DE8918D029B50041DA2E /* btn_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64DC34C318247F9A0044F5F5 /* btn_refresh@2x.png */; };
+		5E60DE8A18D029B50041DA2E /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F0183DC78A00F0396B /* Quicksand-Bold.ttf */; };
+		5E60DE8B18D029B50041DA2E /* btn_refresh2.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7114081832A92A001F1410 /* btn_refresh2.png */; };
+		5E60DE8C18D029B50041DA2E /* UAInboxMessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF72188A47CC0056D138 /* UAInboxMessageListCell.xib */; };
+		5E60DE8D18D029B50041DA2E /* UAPushSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA8188A47CC0056D138 /* UAPushSettingsView.xib */; };
+		5E60DE8E18D029B50041DA2E /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F2183DC78A00F0396B /* Quicksand-Regular.ttf */; };
+		5E60DE8F18D029B50041DA2E /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EDAAFF6186273270068907A /* AirshipConfig.plist */; };
+		5E60DE9018D029B50041DA2E /* skip_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0418CF84190041DA2E /* skip_btn.png */; };
+		5E60DE9118D029B50041DA2E /* btn_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7114041832A43C001F1410 /* btn_list@2x.png */; };
+		5E60DE9218D029B50041DA2E /* overlayCloseBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF70188A47CC0056D138 /* overlayCloseBtn@2x.png */; };
+		5E60DE9318D029B50041DA2E /* bottom-detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF99188A47CC0056D138 /* bottom-detail@2x.png */; };
+		5E60DE9418D029B50041DA2E /* onboarding3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFF18CF84190041DA2E /* onboarding3.png */; };
+		5E60DE9518D029B50041DA2E /* btn-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A54C1824317D00025315 /* btn-mail.png */; };
+		5E60DE9618D029B50041DA2E /* btn_globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6434E066182462C0005E00E7 /* btn_globe@2x.png */; };
+		5E60DE9718D029B50041DA2E /* btn-magnifyGlass.png in Resources */ = {isa = PBXBuildFile; fileRef = 64017EDE1831F67100A3F5BA /* btn-magnifyGlass.png */; };
+		5E60DE9818D029B50041DA2E /* pushpenny-reverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A5411824148B00025315 /* pushpenny-reverse@2x.png */; };
+		5E60DE9918D029B50041DA2E /* UAMapPresentationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF9F188A47CC0056D138 /* UAMapPresentationViewController.xib */; };
+		5E60DE9A18D029B50041DA2E /* btn-disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 6434E06818246433005E00E7 /* btn-disclosure.png */; };
+		5E60DE9B18D029B50041DA2E /* UAInboxMessageListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF73188A47CC0056D138 /* UAInboxMessageListController.xib */; };
+		5E60DE9C18D029B50041DA2E /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDF918CF84190041DA2E /* dot.png */; };
+		5E60DE9D18D029B50041DA2E /* btn-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A54E1824317D00025315 /* btn-map@2x.png */; };
+		5E60DE9E18D029B50041DA2E /* btn-share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A54F1824317D00025315 /* btn-share@2x.png */; };
+		5E60DE9F18D029B50041DA2E /* btn_globe.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7114061832A445001F1410 /* btn_globe.png */; };
+		5E60DEA018D029B50041DA2E /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF6D188A47CC0056D138 /* down@2x.png */; };
+		5E60DEA118D029B50041DA2E /* pushpenny.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A5421824148B00025315 /* pushpenny.png */; };
+		5E60DEA218D029B50041DA2E /* top-detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF9D188A47CC0056D138 /* top-detail@2x.png */; };
+		5E60DEA318D029B50041DA2E /* overlayCloseBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF6F188A47CC0056D138 /* overlayCloseBtn.png */; };
+		5E60DEA418D029B50041DA2E /* btn-help@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A54B1824317D00025315 /* btn-help@2x.png */; };
+		5E60DEA518D029B50041DA2E /* UAPushSettingsAddTagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA2188A47CC0056D138 /* UAPushSettingsAddTagViewController.xib */; };
+		5E60DEA618D029B50041DA2E /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF77188A47CC0056D138 /* up.png */; };
+		5E60DEA718D029B50041DA2E /* login_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFC18CF84190041DA2E /* login_btn.png */; };
+		5E60DEA818D029B50041DA2E /* onboarding6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0218CF84190041DA2E /* onboarding6.png */; };
+		5E60DEA918D029B50041DA2E /* btn-help.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A54A1824317D00025315 /* btn-help.png */; };
+		5E60DEAA18D029B50041DA2E /* swipe_to_see.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0518CF84190041DA2E /* swipe_to_see.png */; };
+		5E60DEAB18D029B50041DA2E /* highlighted_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFB18CF84190041DA2E /* highlighted_dot.png */; };
+		5E60DEAC18D029B50041DA2E /* UAPushLocalization.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA0188A47CC0056D138 /* UAPushLocalization.bundle */; };
+		5E60DEAD18D029B50041DA2E /* UAInboxLocalization.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF71188A47CC0056D138 /* UAInboxLocalization.bundle */; };
+		5E60DEAE18D029B50041DA2E /* UALocationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF9E188A47CC0056D138 /* UALocationSettingsViewController.xib */; };
+		5E60DEAF18D029B50041DA2E /* nav-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 64D51BF7182864AC00964FA4 /* nav-map.png */; };
+		5E60DEB018D029B50041DA2E /* pushpenny-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FE0CAF541819970C00CF816C /* pushpenny-logo.png */; };
+		5E60DEB118D029B50041DA2E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64385DF218186E0E0089E62B /* InfoPlist.strings */; };
+		5E60DEB218D029B50041DA2E /* middle-detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF9B188A47CC0056D138 /* middle-detail@2x.png */; };
+		5E60DEB318D029B50041DA2E /* btn_compass2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE71140D1832A932001F1410 /* btn_compass2@2x.png */; };
+		5E60DEB418D029B50041DA2E /* onboarding4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0018CF84190041DA2E /* onboarding4.png */; };
+		5E60DEB518D029B50041DA2E /* UAPushSettingsUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA7188A47CC0056D138 /* UAPushSettingsUserInfoView.xib */; };
+		5E60DEB618D029B50041DA2E /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF6B188A47CC0056D138 /* check@2x.png */; };
+		5E60DEB718D029B50041DA2E /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF75188A47CC0056D138 /* uncheck.png */; };
+		5E60DEB818D029B50041DA2E /* UAPushSettingsTagsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA5188A47CC0056D138 /* UAPushSettingsTagsViewController.xib */; };
+		5E60DEB918D029B50041DA2E /* pushpenny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A5431824148B00025315 /* pushpenny@2x.png */; };
+		5E60DEBA18D029B50041DA2E /* btn-fav.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A5481824317D00025315 /* btn-fav.png */; };
+		5E60DEBB18D029B50041DA2E /* nav-list.png in Resources */ = {isa = PBXBuildFile; fileRef = FE0CAF5B18199AD500CF816C /* nav-list.png */; };
+		5E60DEBC18D029B50041DA2E /* btn-chevron-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EDCE601833536B00A76E4C /* btn-chevron-1.png */; };
+		5E60DEBD18D029B50041DA2E /* top-detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF9C188A47CC0056D138 /* top-detail.png */; };
+		5E60DEBE18D029B50041DA2E /* bottom-detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF98188A47CC0056D138 /* bottom-detail.png */; };
+		5E60DEBF18D029B50041DA2E /* middle-detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF9A188A47CC0056D138 /* middle-detail.png */; };
+		5E60DEC018D029B50041DA2E /* UAPushMoreSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA1188A47CC0056D138 /* UAPushMoreSettingsView.xib */; };
+		5E60DEC118D029B50041DA2E /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF78188A47CC0056D138 /* up@2x.png */; };
+		5E60DEC218D029B50041DA2E /* UAPushSettingsTokenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA6188A47CC0056D138 /* UAPushSettingsTokenView.xib */; };
+		5E60DEC318D029B50041DA2E /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 64017EE01831FD5F00A3F5BA /* btn-back.png */; };
+		5E60DEC418D029B50041DA2E /* getstarted_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFA18CF84190041DA2E /* getstarted_btn.png */; };
+		5E60DEC518D029B50041DA2E /* btn_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 64DC34C71824806D0044F5F5 /* btn_refresh.png */; };
+		5E60DEC618D029B50041DA2E /* nav-annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = 641061D61838610B00B5BD28 /* nav-annotation.png */; };
+		5E60DEC718D029B50041DA2E /* signup_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DE0318CF84190041DA2E /* signup_btn.png */; };
+		5E60DEC818D029B50041DA2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64385DFB18186E0E0089E62B /* Main.storyboard */; };
+		5E60DEC918D029B50041DA2E /* btn_compass2.png in Resources */ = {isa = PBXBuildFile; fileRef = FE71140C1832A932001F1410 /* btn_compass2.png */; };
+		5E60DECA18D029B50041DA2E /* btn_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 64DC34CA182481BD0044F5F5 /* btn_list.png */; };
+		5E60DECB18D029B50041DA2E /* btn-fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A5491824317D00025315 /* btn-fav@2x.png */; };
+		5E60DECC18D029B50041DA2E /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F1183DC78A00F0396B /* Quicksand-Light.ttf */; };
+		5E60DECD18D029B50041DA2E /* uncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF76188A47CC0056D138 /* uncheck@2x.png */; };
+		5E60DECE18D029B50041DA2E /* btn_compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64DC34C218247F9A0044F5F5 /* btn_compass@2x.png */; };
+		5E60DECF18D029B50041DA2E /* UAPushSettingsAliasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CFA3188A47CC0056D138 /* UAPushSettingsAliasView.xib */; };
+		5E60DED018D029B50041DA2E /* pushpenny-reverse.png in Resources */ = {isa = PBXBuildFile; fileRef = FE28A5401824148B00025315 /* pushpenny-reverse.png */; };
+		5E60DED118D029B50041DA2E /* nav-annotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 641061D71838610B00B5BD28 /* nav-annotation@2x.png */; };
+		5E60DED218D029B50041DA2E /* btn_refresh2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7114091832A92A001F1410 /* btn_refresh2@2x.png */; };
+		5E60DED318D029B50041DA2E /* nav-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64D51BF8182864AC00964FA4 /* nav-map@2x.png */; };
+		5E60DED418D029B50041DA2E /* onboarding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E60DDFD18CF84190041DA2E /* onboarding1.png */; };
+		5E60DED518D029B50041DA2E /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E12CF6A188A47CC0056D138 /* check.png */; };
 		5E62A0F3183DC78A00F0396B /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F0183DC78A00F0396B /* Quicksand-Bold.ttf */; };
 		5E62A0F4183DC78A00F0396B /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F1183DC78A00F0396B /* Quicksand-Light.ttf */; };
 		5E62A0F5183DC78A00F0396B /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E62A0F2183DC78A00F0396B /* Quicksand-Regular.ttf */; };
@@ -325,6 +476,8 @@
 		5E60DE0418CF84190041DA2E /* skip_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip_btn.png; sourceTree = "<group>"; };
 		5E60DE0518CF84190041DA2E /* swipe_to_see.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe_to_see.png; sourceTree = "<group>"; };
 		5E60DE1318CFA0880041DA2E /* launch_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_640x1136.png; sourceTree = "<group>"; };
+		5E60DEDA18D029B50041DA2E /* pinchpenny copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pinchpenny copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E60DEDB18D029B50041DA2E /* pinchpenny copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "pinchpenny copy-Info.plist"; path = "/Users/edlucero/Dropbox/TACKABLE/pinchpenny/code/rc1/pushpennyios/pinchpenny copy-Info.plist"; sourceTree = "<absolute>"; };
 		5E62A0F0183DC78A00F0396B /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		5E62A0F1183DC78A00F0396B /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		5E62A0F2183DC78A00F0396B /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
@@ -435,6 +588,30 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5E60DE6C18D029B50041DA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E60DE6D18D029B50041DA2E /* libFlurry_4.3.0.a in Frameworks */,
+				5E60DE6E18D029B50041DA2E /* CoreTelephony.framework in Frameworks */,
+				5E60DE6F18D029B50041DA2E /* libsqlite3.dylib in Frameworks */,
+				5E60DE7018D029B50041DA2E /* libz.dylib in Frameworks */,
+				5E60DE7118D029B50041DA2E /* SystemConfiguration.framework in Frameworks */,
+				5E60DE7218D029B50041DA2E /* Security.framework in Frameworks */,
+				5E60DE7318D029B50041DA2E /* MobileCoreServices.framework in Frameworks */,
+				5E60DE7418D029B50041DA2E /* CFNetwork.framework in Frameworks */,
+				5E60DE7518D029B50041DA2E /* CoreLocation.framework in Frameworks */,
+				5E60DE7618D029B50041DA2E /* MapKit.framework in Frameworks */,
+				5E60DE7718D029B50041DA2E /* Accelerate.framework in Frameworks */,
+				5E60DE7818D029B50041DA2E /* QuartzCore.framework in Frameworks */,
+				5E60DE7918D029B50041DA2E /* CoreGraphics.framework in Frameworks */,
+				5E60DE7A18D029B50041DA2E /* UIKit.framework in Frameworks */,
+				5E60DE7B18D029B50041DA2E /* Foundation.framework in Frameworks */,
+				5E60DE7C18D029B50041DA2E /* libUAirship-3.0.2.a in Frameworks */,
+				5E60DE7D18D029B50041DA2E /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64385DE318186E0E0089E62B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -791,6 +968,7 @@
 				64385DE818186E0E0089E62B /* Frameworks */,
 				64385DE718186E0E0089E62B /* Products */,
 				0339FFE5A8224607A439EE7C /* Pods.xcconfig */,
+				5E60DEDB18D029B50041DA2E /* pinchpenny copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -799,6 +977,7 @@
 			children = (
 				64385DE618186E0E0089E62B /* pinchpenny.app */,
 				64385E0718186E0E0089E62B /* pinchpennyTests.xctest */,
+				5E60DEDA18D029B50041DA2E /* pinchpenny copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1009,6 +1188,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5E60DE3A18D029B50041DA2E /* pinchpenny beta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E60DED718D029B50041DA2E /* Build configuration list for PBXNativeTarget "pinchpenny beta" */;
+			buildPhases = (
+				5E60DE3B18D029B50041DA2E /* Check Pods Manifest.lock */,
+				5E60DE3C18D029B50041DA2E /* Sources */,
+				5E60DE6C18D029B50041DA2E /* Frameworks */,
+				5E60DE7E18D029B50041DA2E /* Resources */,
+				5E60DED618D029B50041DA2E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pinchpenny beta";
+			productName = pinchpenny;
+			productReference = 5E60DEDA18D029B50041DA2E /* pinchpenny copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 		64385DE518186E0E0089E62B /* pinchpenny */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64385E1818186E0E0089E62B /* Build configuration list for PBXNativeTarget "pinchpenny" */;
@@ -1078,11 +1276,106 @@
 			targets = (
 				64385DE518186E0E0089E62B /* pinchpenny */,
 				64385E0618186E0E0089E62B /* pinchpennyTests */,
+				5E60DE3A18D029B50041DA2E /* pinchpenny beta */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5E60DE7E18D029B50041DA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E60DE7F18D029B50041DA2E /* onboarding5.png in Resources */,
+				5E60DE8018D029B50041DA2E /* down.png in Resources */,
+				5E60DE8118D029B50041DA2E /* onboarding2.png in Resources */,
+				5E60DE8218D029B50041DA2E /* nav-list@2x.png in Resources */,
+				5E60DE8318D029B50041DA2E /* UAPushSettingsSoundsViewController.xib in Resources */,
+				5E60DE8418D029B50041DA2E /* Images.xcassets in Resources */,
+				5E60DE8518D029B50041DA2E /* btn_compass.png in Resources */,
+				5E60DE8618D029B50041DA2E /* launch_640x1136.png in Resources */,
+				5E60DE8718D029B50041DA2E /* UAInboxMessageViewController.xib in Resources */,
+				5E60DE8818D029B50041DA2E /* btn-map.png in Resources */,
+				5E60DE8918D029B50041DA2E /* btn_refresh@2x.png in Resources */,
+				5E60DE8A18D029B50041DA2E /* Quicksand-Bold.ttf in Resources */,
+				5E60DE8B18D029B50041DA2E /* btn_refresh2.png in Resources */,
+				5E60DE8C18D029B50041DA2E /* UAInboxMessageListCell.xib in Resources */,
+				5E60DE8D18D029B50041DA2E /* UAPushSettingsView.xib in Resources */,
+				5E60DE8E18D029B50041DA2E /* Quicksand-Regular.ttf in Resources */,
+				5E60DE8F18D029B50041DA2E /* AirshipConfig.plist in Resources */,
+				5E60DE9018D029B50041DA2E /* skip_btn.png in Resources */,
+				5E60DE9118D029B50041DA2E /* btn_list@2x.png in Resources */,
+				5E60DE9218D029B50041DA2E /* overlayCloseBtn@2x.png in Resources */,
+				5E60DE9318D029B50041DA2E /* bottom-detail@2x.png in Resources */,
+				5E60DE9418D029B50041DA2E /* onboarding3.png in Resources */,
+				5E60DE9518D029B50041DA2E /* btn-mail.png in Resources */,
+				5E60DE9618D029B50041DA2E /* btn_globe@2x.png in Resources */,
+				5E60DE9718D029B50041DA2E /* btn-magnifyGlass.png in Resources */,
+				5E60DE9818D029B50041DA2E /* pushpenny-reverse@2x.png in Resources */,
+				5E60DE9918D029B50041DA2E /* UAMapPresentationViewController.xib in Resources */,
+				5E60DE9A18D029B50041DA2E /* btn-disclosure.png in Resources */,
+				5E60DE9B18D029B50041DA2E /* UAInboxMessageListController.xib in Resources */,
+				5E60DE9C18D029B50041DA2E /* dot.png in Resources */,
+				5E60DE9D18D029B50041DA2E /* btn-map@2x.png in Resources */,
+				5E60DE9E18D029B50041DA2E /* btn-share@2x.png in Resources */,
+				5E60DE9F18D029B50041DA2E /* btn_globe.png in Resources */,
+				5E60DEA018D029B50041DA2E /* down@2x.png in Resources */,
+				5E60DEA118D029B50041DA2E /* pushpenny.png in Resources */,
+				5E60DEA218D029B50041DA2E /* top-detail@2x.png in Resources */,
+				5E60DEA318D029B50041DA2E /* overlayCloseBtn.png in Resources */,
+				5E60DEA418D029B50041DA2E /* btn-help@2x.png in Resources */,
+				5E60DEA518D029B50041DA2E /* UAPushSettingsAddTagViewController.xib in Resources */,
+				5E60DEA618D029B50041DA2E /* up.png in Resources */,
+				5E60DEA718D029B50041DA2E /* login_btn.png in Resources */,
+				5E60DEA818D029B50041DA2E /* onboarding6.png in Resources */,
+				5E60DEA918D029B50041DA2E /* btn-help.png in Resources */,
+				5E60DEAA18D029B50041DA2E /* swipe_to_see.png in Resources */,
+				5E60DEAB18D029B50041DA2E /* highlighted_dot.png in Resources */,
+				5E60DEAC18D029B50041DA2E /* UAPushLocalization.bundle in Resources */,
+				5E60DEAD18D029B50041DA2E /* UAInboxLocalization.bundle in Resources */,
+				5E60DEAE18D029B50041DA2E /* UALocationSettingsViewController.xib in Resources */,
+				5E60DEAF18D029B50041DA2E /* nav-map.png in Resources */,
+				5E60DEB018D029B50041DA2E /* pushpenny-logo.png in Resources */,
+				5E60DEB118D029B50041DA2E /* InfoPlist.strings in Resources */,
+				5E60DEB218D029B50041DA2E /* middle-detail@2x.png in Resources */,
+				5E60DEB318D029B50041DA2E /* btn_compass2@2x.png in Resources */,
+				5E60DEB418D029B50041DA2E /* onboarding4.png in Resources */,
+				5E60DEB518D029B50041DA2E /* UAPushSettingsUserInfoView.xib in Resources */,
+				5E60DEB618D029B50041DA2E /* check@2x.png in Resources */,
+				5E60DEB718D029B50041DA2E /* uncheck.png in Resources */,
+				5E60DEB818D029B50041DA2E /* UAPushSettingsTagsViewController.xib in Resources */,
+				5E60DEB918D029B50041DA2E /* pushpenny@2x.png in Resources */,
+				5E60DEBA18D029B50041DA2E /* btn-fav.png in Resources */,
+				5E60DEBB18D029B50041DA2E /* nav-list.png in Resources */,
+				5E60DEBC18D029B50041DA2E /* btn-chevron-1.png in Resources */,
+				5E60DEBD18D029B50041DA2E /* top-detail.png in Resources */,
+				5E60DEBE18D029B50041DA2E /* bottom-detail.png in Resources */,
+				5E60DEBF18D029B50041DA2E /* middle-detail.png in Resources */,
+				5E60DEC018D029B50041DA2E /* UAPushMoreSettingsView.xib in Resources */,
+				5E60DEC118D029B50041DA2E /* up@2x.png in Resources */,
+				5E60DEC218D029B50041DA2E /* UAPushSettingsTokenView.xib in Resources */,
+				5E60DEC318D029B50041DA2E /* btn-back.png in Resources */,
+				5E60DEC418D029B50041DA2E /* getstarted_btn.png in Resources */,
+				5E60DEC518D029B50041DA2E /* btn_refresh.png in Resources */,
+				5E60DEC618D029B50041DA2E /* nav-annotation.png in Resources */,
+				5E60DEC718D029B50041DA2E /* signup_btn.png in Resources */,
+				5E60DEC818D029B50041DA2E /* Main.storyboard in Resources */,
+				5E60DEC918D029B50041DA2E /* btn_compass2.png in Resources */,
+				5E60DECA18D029B50041DA2E /* btn_list.png in Resources */,
+				5E60DECB18D029B50041DA2E /* btn-fav@2x.png in Resources */,
+				5E60DECC18D029B50041DA2E /* Quicksand-Light.ttf in Resources */,
+				5E60DECD18D029B50041DA2E /* uncheck@2x.png in Resources */,
+				5E60DECE18D029B50041DA2E /* btn_compass@2x.png in Resources */,
+				5E60DECF18D029B50041DA2E /* UAPushSettingsAliasView.xib in Resources */,
+				5E60DED018D029B50041DA2E /* pushpenny-reverse.png in Resources */,
+				5E60DED118D029B50041DA2E /* nav-annotation@2x.png in Resources */,
+				5E60DED218D029B50041DA2E /* btn_refresh2@2x.png in Resources */,
+				5E60DED318D029B50041DA2E /* nav-map@2x.png in Resources */,
+				5E60DED418D029B50041DA2E /* onboarding1.png in Resources */,
+				5E60DED518D029B50041DA2E /* check.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64385DE418186E0E0089E62B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1188,6 +1481,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5E60DE3B18D029B50041DA2E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E60DED618D029B50041DA2E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6F2C6CE32D6A49C69DD4AFB7 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1221,6 +1544,60 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E60DE3C18D029B50041DA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E60DE3D18D029B50041DA2E /* Style-View-Shadow.m in Sources */,
+				5E60DE3E18D029B50041DA2E /* MapPin.m in Sources */,
+				5E60DE3F18D029B50041DA2E /* UAPushSettingsAddTagViewController.m in Sources */,
+				5E60DE4018D029B50041DA2E /* UAInboxMessageListCell.m in Sources */,
+				5E60DE4118D029B50041DA2E /* UAInboxMessageViewController.m in Sources */,
+				5E60DE4218D029B50041DA2E /* UAPushSettingsUserInfoViewController.m in Sources */,
+				5E60DE4318D029B50041DA2E /* UAInboxAlertHandler.m in Sources */,
+				5E60DE4418D029B50041DA2E /* UAMapPresentationController.m in Sources */,
+				5E60DE4518D029B50041DA2E /* Style-View-RoundCornerShadow.m in Sources */,
+				5E60DE4618D029B50041DA2E /* iRate.m in Sources */,
+				5E60DE4718D029B50041DA2E /* UAPushSettingsAliasViewController.m in Sources */,
+				5E60DE4818D029B50041DA2E /* UADateUtils.m in Sources */,
+				5E60DE4918D029B50041DA2E /* BaseIntroductionViewController.m in Sources */,
+				5E60DE4A18D029B50041DA2E /* DealViewController.m in Sources */,
+				5E60DE4B18D029B50041DA2E /* Constants.m in Sources */,
+				5E60DE4C18D029B50041DA2E /* CellDealImage.m in Sources */,
+				5E60DE4D18D029B50041DA2E /* Style-View-BorderedShadow.m in Sources */,
+				5E60DE4E18D029B50041DA2E /* UAInboxMessageListController.m in Sources */,
+				5E60DE4F18D029B50041DA2E /* UABarButtonSegmentedControl.m in Sources */,
+				5E60DE5018D029B50041DA2E /* Style-Btn-Gradient.m in Sources */,
+				5E60DE5118D029B50041DA2E /* UAPushSettingsSoundsViewController.m in Sources */,
+				5E60DE5218D029B50041DA2E /* UAPushNotificationHandler.m in Sources */,
+				5E60DE5318D029B50041DA2E /* Style-View-Circle-Large.m in Sources */,
+				5E60DE5418D029B50041DA2E /* Style-View-TileBG.m in Sources */,
+				5E60DE5518D029B50041DA2E /* UAPushMoreSettingsViewController.m in Sources */,
+				5E60DE5618D029B50041DA2E /* UIWebView+UAAdditions.m in Sources */,
+				5E60DE5718D029B50041DA2E /* UABeveledLoadingIndicator.m in Sources */,
+				5E60DE5818D029B50041DA2E /* DKLiveBlurView.m in Sources */,
+				5E60DE5918D029B50041DA2E /* Style-View-Circle.m in Sources */,
+				5E60DE5A18D029B50041DA2E /* FilterCategoryViewController.m in Sources */,
+				5E60DE5B18D029B50041DA2E /* Style-View-RoundCorner.m in Sources */,
+				5E60DE5C18D029B50041DA2E /* UAPushUI.m in Sources */,
+				5E60DE5D18D029B50041DA2E /* UAInboxUI.m in Sources */,
+				5E60DE5E18D029B50041DA2E /* HomeViewController.m in Sources */,
+				5E60DE5F18D029B50041DA2E /* WebViewController.m in Sources */,
+				5E60DE6018D029B50041DA2E /* Style-imageView-RoundCorner.m in Sources */,
+				5E60DE6118D029B50041DA2E /* UAPushSettingsViewController.m in Sources */,
+				5E60DE6218D029B50041DA2E /* UAPushSettingsTagsViewController.m in Sources */,
+				5E60DE6318D029B50041DA2E /* UAPushSettingsTokenViewController.m in Sources */,
+				5E60DE6418D029B50041DA2E /* UALocationSettingsViewController.m in Sources */,
+				5E60DE6518D029B50041DA2E /* DealOnMapViewController.m in Sources */,
+				5E60DE6618D029B50041DA2E /* UAInboxOverlayController.m in Sources */,
+				5E60DE6718D029B50041DA2E /* AppDelegate.m in Sources */,
+				5E60DE6818D029B50041DA2E /* main.m in Sources */,
+				5E60DE6918D029B50041DA2E /* Style-Btn-RoundCorner.m in Sources */,
+				5E60DE6A18D029B50041DA2E /* UAInboxNavUI.m in Sources */,
+				5E60DE6B18D029B50041DA2E /* UALocationDemoAnnotation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64385DE218186E0E0089E62B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1321,6 +1698,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5E60DED818D029B50041DA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0339FFE5A8224607A439EE7C /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pinchpenny/pinchpenny-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../Airship/**/**",
+				);
+				INFOPLIST_FILE = "pinchpenny copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/pinchpenny/3rdparty/Flurry",
+					"$(SRCROOT)/pinchpenny/3rdparty/Airship",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "pinchpenny copy";
+				PROVISIONING_PROFILE = "DBE8B76A-5AF1-48C5-9F1F-A0F08F280CFB";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5E60DED918D029B50041DA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0339FFE5A8224607A439EE7C /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Digital First Ventures, LLC (R69327U8TK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Digital First Ventures, LLC (R69327U8TK)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pinchpenny/pinchpenny-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../Airship/**/**",
+				);
+				INFOPLIST_FILE = "pinchpenny copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/pinchpenny/3rdparty/Flurry",
+					"$(SRCROOT)/pinchpenny/3rdparty/Airship",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "pinchpenny copy";
+				PROVISIONING_PROFILE = "4189E4E1-6C7B-48CD-9D94-E5F261D6BEF8";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		64385E1618186E0E0089E62B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1418,7 +1853,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DBE8B76A-5AF1-48C5-9F1F-A0F08F280CFB";
+				PROVISIONING_PROFILE = "B37A88D1-2087-44AC-A668-EFDA7224069B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1497,6 +1932,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5E60DED718D029B50041DA2E /* Build configuration list for PBXNativeTarget "pinchpenny beta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E60DED818D029B50041DA2E /* Debug */,
+				5E60DED918D029B50041DA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		64385DE118186E0E0089E62B /* Build configuration list for PBXProject "pinchpenny" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

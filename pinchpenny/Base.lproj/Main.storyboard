@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SkB-7L-AmO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SkB-7L-AmO">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -982,8 +982,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="bg-street.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="GjD-MP-8AL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmO-rm-Gau" userLabel="View - buttons">
+                                <rect key="frame" x="0.0" y="126" width="320" height="251"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qw-it-qIL">
+                                        <rect key="frame" x="0.0" y="5" width="103" height="122"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionDining:" destination="7KO-BQ-JlW" eventType="touchUpInside" id="fgD-6A-kCU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afC-wr-kAW">
+                                        <rect key="frame" x="109" y="5" width="103" height="122"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionEvents:" destination="7KO-BQ-JlW" eventType="touchUpInside" id="NLt-GU-aYb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvE-6E-61f">
+                                        <rect key="frame" x="217" y="5" width="103" height="122"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionShopping:" destination="7KO-BQ-JlW" eventType="touchUpInside" id="z4N-M6-oEy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhr-qz-IA7">
+                                        <rect key="frame" x="0.0" y="135" width="103" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionHealthBeauty:" destination="7KO-BQ-JlW" eventType="touchUpInside" id="3ol-P7-Pm0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oI-Na-Bb1">
+                                        <rect key="frame" x="109" y="135" width="103" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionFitness:" destination="7KO-BQ-JlW" eventType="touchUpInside" id="AL3-fj-gkE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHy-h6-hMN">
+                                        <rect key="frame" x="217" y="135" width="103" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionDismiss:" destination="7KO-BQ-JlW" eventType="touchUpInside" id="er8-Bf-YGE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="251" id="gtB-5l-cnO"/>
+                                </constraints>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="onboarding6.png" translatesAutoresizingMaskIntoConstraints="NO" id="GjD-MP-8AL">
+                                <rect key="frame" x="0.0" y="-87" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKG-2m-wMp" customClass="SwipeView">
@@ -1006,9 +1076,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="actionDismiss:" destination="7KO-BQ-JlW" eventType="touchUpInside" id="5Yw-pX-bvq"/>
-                                        </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="i4E-Z7-1nt">
                                         <rect key="frame" x="82" y="91" width="158" height="37"/>
@@ -1035,11 +1102,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Uwc-by-lFk" firstAttribute="top" secondItem="KKG-2m-wMp" secondAttribute="bottom" id="9Uu-ag-ecF"/>
+                            <constraint firstItem="zmO-rm-Gau" firstAttribute="leading" secondItem="qUz-Lv-k12" secondAttribute="leading" id="Ep8-jr-g6x"/>
                             <constraint firstAttribute="trailing" secondItem="KKG-2m-wMp" secondAttribute="trailing" id="LXu-zu-krD"/>
                             <constraint firstAttribute="trailing" secondItem="LXh-xZ-fjm" secondAttribute="trailing" id="Sv6-Hq-kgm"/>
                             <constraint firstItem="Uwc-by-lFk" firstAttribute="top" secondItem="LXh-xZ-fjm" secondAttribute="bottom" id="T0u-wv-kfL"/>
                             <constraint firstItem="KKG-2m-wMp" firstAttribute="leading" secondItem="qUz-Lv-k12" secondAttribute="leading" id="TeW-cJ-UlO"/>
+                            <constraint firstAttribute="trailing" secondItem="zmO-rm-Gau" secondAttribute="trailing" id="j1e-6Z-8ky"/>
                             <constraint firstItem="LXh-xZ-fjm" firstAttribute="leading" secondItem="qUz-Lv-k12" secondAttribute="leading" id="r2P-u7-ENl"/>
+                            <constraint firstItem="Uwc-by-lFk" firstAttribute="top" secondItem="zmO-rm-Gau" secondAttribute="bottom" constant="103" id="slx-9T-OCv"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1047,6 +1117,7 @@
                         <outlet property="btnSkip" destination="cS9-PV-0wh" id="VGj-GR-OEM"/>
                         <outlet property="pageControl" destination="i4E-Z7-1nt" id="qzi-67-frN"/>
                         <outlet property="swipeView" destination="KKG-2m-wMp" id="lCz-wL-ZyC"/>
+                        <outlet property="viewButtons" destination="zmO-rm-Gau" id="Ze0-y3-R7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqQ-GS-8XT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1056,7 +1127,6 @@
     </scenes>
     <resources>
         <image name="PP_splash.png" width="640" height="1136"/>
-        <image name="bg-street.jpg" width="90" height="25"/>
         <image name="btn-magnifyGlass.png" width="64" height="64"/>
         <image name="btn_compass.png" width="40" height="40"/>
         <image name="btn_globe.png" width="40" height="40"/>
@@ -1064,6 +1134,7 @@
         <image name="btn_refresh.png" width="40" height="40"/>
         <image name="getstarted_btn.png" width="1268" height="363"/>
         <image name="nav-annotation.png" width="40" height="40"/>
+        <image name="onboarding6.png" width="640" height="1136"/>
         <image name="skip_btn.png" width="468" height="188"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
