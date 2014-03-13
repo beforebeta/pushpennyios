@@ -333,7 +333,7 @@
     NSString *strCityState = kDefaultLocation;
     [[NSUserDefaults standardUserDefaults]setObject:strCityState forKey:kUserDefinedCityState];
     flagUserLocationNotKnown = YES;
-    backgroundView.originalImage = [UIImage imageNamed:kDefaultBackgroundImage];
+    [self refreshBackgroundImageUsingCurrentLocationLat:[[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLatitude] andLon:[[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLongitude]];
     [self updateFeedParameters];
     [self fetchDealFeedwithPaging:NO];
 }
@@ -704,6 +704,20 @@
         [[NSUserDefaults standardUserDefaults]setObject:strLocation forKey:kUserDefinedCityState];
     }
     [self fetchDealFeedwithPaging:NO];
+    [self refreshBackgroundImageUsingCurrentLocationLat:[[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLatitude] andLon:[[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLongitude]];
+}
+
+-(void)refreshBackgroundImageUsingCurrentLocationLat:(NSString *)lat andLon:(NSString *)lon;
+{
+    NSString *feedURL = [NSString stringWithFormat:@"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we&location=%@,%@&id=%@",lat,lon,strUUID];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:feedURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *URLbgImage = [responseObject objectForKey:@"default_image"];
+        [self setBackgroundImageWithURL:URLbgImage];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
 }
 
 @end
