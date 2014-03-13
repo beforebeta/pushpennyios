@@ -666,5 +666,10 @@
     }
 }
 
+-(void)openDetailFromLink:(NSString *)url;
+{
+    NSLog(@"HomeViewController openDetailFromLink [%@]",url);
+}
+
 
 @end
