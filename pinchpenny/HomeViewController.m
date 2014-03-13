@@ -15,6 +15,7 @@
 #import <Accelerate/Accelerate.h>
 #import "DealViewController.h"
 #import "Flurry.h"
+#import "GAITrackedViewController.h"
 
 #define kDKTableViewDefaultContentInset 0.0f
 #define kTableCell_HeaderBody 0
@@ -131,6 +132,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [Flurry logPageView];
+    self.screenName = @"Home";
+    [super viewDidAppear:animated];
 }
 
 #pragma mark - Actions
@@ -157,6 +160,8 @@
                             [Flurry logEvent:@"Action_ViewDealsMap"];
                             _viewForTable.hidden = YES;
                             _viewMap.hidden = NO;
+                            self.screenName = [NSString stringWithFormat:@"Viewed Map"];
+
                         }
                     }
      
@@ -195,6 +200,7 @@
                          placemark.country]);
             NSString *strCityState = [NSString stringWithFormat:@"%@, %@",placemark.locality,placemark.administrativeArea];
             [[NSUserDefaults standardUserDefaults]setObject:strCityState forKey:kUserDefinedCityState];
+            self.screenName = [NSString stringWithFormat:@"Map - %@", strCityState];
             [self updateFeedParameters];
         } else {
             NSLog(@"%@", error.debugDescription);

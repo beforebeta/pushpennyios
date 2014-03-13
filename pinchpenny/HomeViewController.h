@@ -13,7 +13,7 @@
 #import "BaseIntroductionViewController.h"
 
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : GAITrackedViewController
 <
 UIScrollViewDelegate
 ,CLLocationManagerDelegate

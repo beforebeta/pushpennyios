@@ -12,6 +12,7 @@
 #import "UAConfig.h"
 #import "UAPush.h"
 #import "iRate.h"
+#import "GAI.h"
 
 @implementation AppDelegate
 
@@ -24,6 +25,19 @@
         [[NSUserDefaults standardUserDefaults]setObject:uuid forKey:kUUID];
         [Flurry setUserID:uuid];
     }
+    
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker.
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-47276819-1"];
+    
     // Populate AirshipConfig.plist with your app's info from https://go.urbanairship.com
     // or set runtime properties here.
     UAConfig *config = [UAConfig defaultConfig];

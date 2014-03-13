@@ -13,6 +13,8 @@
 #import "WebViewController.h"
 #import "DealOnMapViewController.h"
 #import "Flurry.h"
+#import "GAITrackedViewController.h"
+
 
 @interface DealViewController ()
 {
@@ -27,6 +29,7 @@
     NSString *expireDate;
     NSString *finePrint;
     NSString *description;
+    NSString *url;
     float viewHieght;
     NSDate *dateExpiration;
     BOOL flagDescriptionFullyVisible;
@@ -69,6 +72,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [Flurry logPageView];
+    [super viewDidAppear:animated];
 }
 
 
@@ -104,6 +108,7 @@
     expireDate=@"";
     description=@"";
     finePrint = @"";
+
     // GET VALUES FROM DICTIONARY.  VALIDATE ITEM
     if ([_dealDict objectForKey:@"title"]&& ![[_dealDict objectForKey:@"title"] isKindOfClass:[NSNull class]]) {
         title = [_dealDict objectForKey:@"title"];
@@ -148,6 +153,8 @@
                                 addressLine2State, @"State",
                                 nil];
     [Flurry logEvent:@"Detail_Viewed" withParameters:dictionary];
+    self.screenName = [NSString stringWithFormat:@"Deal - %@ ", title];
+
 }
 
 -(NSString *)createReadableExpirationDate:(NSString *)dateString;

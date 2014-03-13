@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface DealViewController : UIViewController
+@interface DealViewController : GAITrackedViewController
  <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSDictionary *dealDict;

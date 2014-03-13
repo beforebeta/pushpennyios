@@ -8,6 +8,8 @@
 
 #import "WebViewController.h"
 #import "Flurry.h"
+#import "GAITrackedViewController.h"
+
 
 @interface WebViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -29,6 +31,7 @@
 
 - (void)viewDidLoad
 {
+    self.screenName = [NSString stringWithFormat:@"WebView - %@ ", _strURL];
     [super viewDidLoad];
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, [UIFont fontWithName:@"Avenir-Light" size:18.0], UITextAttributeFont,nil];
     UIImage *buttonImage = [UIImage imageNamed:@"btn-back.png"];
@@ -50,11 +53,13 @@
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [Flurry logPageView];
+    [super viewDidAppear:animated];
 }
 
 

@@ -11,7 +11,7 @@
 
 @protocol FilterCategoryViewControllerDelegate;
 
-@interface FilterCategoryViewController : UIViewController
+@interface FilterCategoryViewController : GAITrackedViewController
 <UITableViewDataSource
 ,UITableViewDelegate
 ,UITextFieldDelegate

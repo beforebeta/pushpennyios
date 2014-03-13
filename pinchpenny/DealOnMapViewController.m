@@ -8,6 +8,7 @@
 
 #import "DealOnMapViewController.h"
 #import "Flurry.h"
+#import "GAITrackedViewController.h"
 
 @interface DealOnMapViewController ()
 
@@ -27,6 +28,7 @@
 
 - (void)viewDidLoad
 {
+    self.screenName = [NSString stringWithFormat:@"Map for - %@ ", _strBusinessName];
     [super viewDidLoad];
     // SetUp Custom NavBar Settings
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, [UIFont fontWithName:@"Avenir-Light" size:18.0], UITextAttributeFont,nil];
@@ -51,10 +53,12 @@
     point.subtitle = _strAddress;
     [_mapView addAnnotation:point];
     [_mapView selectAnnotation:point animated:YES];
+
 }
 - (void)viewDidAppear:(BOOL)animated
 {
     [Flurry logPageView];
+    [super viewDidAppear:animated];
 }
 
 -(void)back {

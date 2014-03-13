@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Flurry.h"
+#import "GAITrackedViewController.h"
 
 #define TEXTFIELD_KEYWORD 1
 #define TEXTFIELD_LOCATION 2
@@ -72,6 +73,8 @@
     [Flurry logPageView];
     _textFieldKeyword.text = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedCategory];
     _textFieldLocation.text = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedCityState];
+    self.screenName = @"Search";
+    [super viewDidAppear:animated];
 }
 
 #pragma mark - action
