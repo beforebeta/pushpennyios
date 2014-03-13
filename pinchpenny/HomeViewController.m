@@ -121,6 +121,11 @@
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
     [self getUserLocation];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(displayCategoryFromURL:)
+                                                 name:@"handlingOpenURL"
+                                               object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -671,5 +676,12 @@
     NSLog(@"HomeViewController openDetailFromLink [%@]",url);
 }
 
+- (void)displayCategoryFromURL:(NSNotification *)notification {
+    NSLog(@"createNewChannelFromUserProfileTab %@", notification.object);
+    NSString *keyword = [notification.object objectForKey:@"keyword"];
+    [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategory];
+    [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategorySlug];
+    [self fetchDealFeedwithPaging:NO];
+}
 
 @end
