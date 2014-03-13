@@ -93,35 +93,16 @@
     NSLog(@"query string: %@", [url query]);
     NSLog(@"host: %@", [url host]);
     NSLog(@"url path: %@", [url path]);
-//    NSDictionary *dict = [self parseQueryString:[url query]];
-//    NSLog(@"query dict: %@", dict);
-    NSDictionary *payload = [[NSDictionary alloc]initWithObjectsAndKeys:@"gym",@"keyword", nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"handlingOpenURL" object:payload];
-    // NOTE TO SELF ON MODEL USING NOTIFCATIONS.
-    /*
-    NSDictionary * chatstream = [[dictionary objectForKey:@"chatstreams"]objectAtIndex:0];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"NewChannelFromContactDetails" object:chatstream];
-     */
-    /*
-     [[NSNotificationCenter defaultCenter] addObserver:self
-     selector:@selector(requestingChannelCreation:)
-     name:@"NewChannelFromContactDetails"
-     object:nil];
-     */
-    /*
-     - (void)requestingChannelCreation:(NSNotification *)notification {
-     NSLog(@"createNewChannelFromUserProfileTab %@", notification.object);
-     chatChannelPendingID = [notification.object objectForKey:@"chat_stream_id"];
-     flagIsWaitingForPendingChatCreation = YES;
-     [SVProgressHUD showWithStatus:@"conectar..."];
-     // Show HUD max 5 sec to avoid blocking the app
-     double delayInSeconds = 5.0;
-     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-     [SVProgressHUD dismiss];
-     });
-     }
-     */
+    if ([[url host] isEqualToString:@"api"] &&
+        [url query]) {
+        NSDictionary *dict = [self parseQueryString:[url query]];
+        NSLog(@"query dict: %@", dict);
+        NSString *apicall = [dict objectForKey:@"feed"];
+        if ([apicall isEqualToString:@"category"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"handlingOpenURL" object:dict];
+        }
+        
+    }
     return YES;
 }
 

@@ -326,7 +326,7 @@
 {
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                               initWithTitle:@"Deals Nearby?" message:@"We are unable to get your current location. Turn on location in settings to see great deals offered in your neighborhood" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
     [[NSUserDefaults standardUserDefaults]setObject:kDefaultLatitude forKey:kUserDefinedLatitude];
     [[NSUserDefaults standardUserDefaults]setObject:kDefaultLongitude forKey:kUserDefinedLongitude];
@@ -687,8 +687,22 @@
 - (void)displayCategoryFromURL:(NSNotification *)notification {
     NSLog(@"createNewChannelFromUserProfileTab %@", notification.object);
     NSString *keyword = [notification.object objectForKey:@"keyword"];
-    [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategory];
-    [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategorySlug];
+    if (keyword) {
+        [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategory];
+        [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategorySlug];
+    }
+    NSString *strLat = [notification.object objectForKey:@"lat"];
+    if (strLat) {
+        [[NSUserDefaults standardUserDefaults]setObject:strLat forKey:kUserDefinedLatitude];
+    }
+    NSString *strLon = [notification.object objectForKey:@"lon"];
+    if (strLon) {
+        [[NSUserDefaults standardUserDefaults]setObject:strLon forKey:kUserDefinedLongitude];
+    }
+    NSString *strLocation = [notification.object objectForKey:@"location"];
+    if (strLocation) {
+        [[NSUserDefaults standardUserDefaults]setObject:strLocation forKey:kUserDefinedCityState];
+    }
     [self fetchDealFeedwithPaging:NO];
 }
 
