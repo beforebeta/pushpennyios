@@ -105,6 +105,11 @@
     } else {
         [self.view sendSubviewToBack:_viewButtons];
     }
+    // If we don't have user location yet and last boarding page then get location
+    if (swipeView.currentPage == TOTAL_BOARDING_PAGES-1
+        && ![[NSUserDefaults standardUserDefaults] objectForKey:kUserDefinedLatitude]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserAtLastPageOfBoarding" object:nil];
+    }
 }
 
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view

@@ -71,7 +71,10 @@
     [super viewDidLoad];
     if(YES){
         [self performSegueWithIdentifier:@"boarding" sender:self];
-    } else 
+    } else {
+        [self initializeRequestForLocation];
+    }
+    
     if (![[NSUserDefaults standardUserDefaults]objectForKey:kUUID]) {
         strUUID = [[NSUUID UUID] UUIDString];
     } else {
@@ -116,16 +119,13 @@
     [[self.navigationController.navigationBar.subviews objectAtIndex:1] setUserInteractionEnabled:YES];
     [[self.navigationController.navigationBar.subviews objectAtIndex:1] addGestureRecognizer:navSingleTap];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navSingleTap) name:@"touchStatusBarClick" object:nil];
-    // Network
-    [_activityIndicator startAnimating];
-    // Location
-    locationManager = [[CLLocationManager alloc] init];
-    geocoder = [[CLGeocoder alloc] init];
-    [self getUserLocation];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(displayCategoryFromURL:)
                                                  name:@"handlingOpenURL"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(initializeRequestForLocation)
+                                                 name:@"UserAtLastPageOfBoarding"
                                                object:nil];
 }
 
@@ -319,14 +319,28 @@
 {
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager startUpdatingLocation];
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    if ( status == kCLAuthorizationStatusDenied) {
+        NSLog(@"getUserLocation kCLAuthorizationStatusDenied");
+        UIAlertView *errorAlert = [[UIAlertView alloc]
+                                   initWithTitle:@"Deals Nearby?" message:@"We are unable to get your current location. Turn on location in settings to see great deals offered in your neighborhood.  Would you like to enter a zip code instead?" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:@"No Thanks",nil];
+        errorAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        errorAlert.delegate = self;
+        errorAlert.tag = 20;
+    } else {
+        [locationManager startUpdatingLocation];
+    }
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Deals Nearby?" message:@"We are unable to get your current location. Turn on location in settings to see great deals offered in your neighborhood" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                               initWithTitle:@"Location missing" message:@"We are unable to get your current location at the moment. Enter your zip code instead?" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:@"No Thanks",nil];
+    errorAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    errorAlert.delegate = self;
+    errorAlert.tag = 20;
     [errorAlert show];
     [[NSUserDefaults standardUserDefaults]setObject:kDefaultLatitude forKey:kUserDefinedLatitude];
     [[NSUserDefaults standardUserDefaults]setObject:kDefaultLongitude forKey:kUserDefinedLongitude];
@@ -718,6 +732,23 @@
         NSLog(@"Error: %@", error);
     }];
 
+}
+
+-(void)initializeRequestForLocation;
+{
+    // Network
+    [_activityIndicator startAnimating];
+    // Location
+    locationManager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
+    [self getUserLocation];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"clickedButtonAtIndex %li",(long)buttonIndex);
+    if (alertView.tag ==20) {
+        NSLog(@"%@", [alertView textFieldAtIndex:0].text);
+    }
 }
 
 @end

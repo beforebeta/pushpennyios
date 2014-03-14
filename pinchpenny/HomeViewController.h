@@ -21,7 +21,8 @@ UIScrollViewDelegate
 ,UITableViewDataSource
 ,UITableViewDelegate
 ,FilterCategoryViewControllerDelegate
-,BaseIntroductionViewControllerDelegate
+,BaseIntroductionViewControllerDelegate,
+UIAlertViewDelegate
 >
 
 @end
