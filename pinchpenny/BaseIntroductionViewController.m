@@ -83,6 +83,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:keycateogry forKey:kUserDefinedCategory];
     [[NSUserDefaults standardUserDefaults] setObject:keycateogry forKey:kUserDefinedCategorySlug];
     [_delegate fetchDealFeedwithPaging:NO];
+    [_delegate refreshBackgroundImageUsingCurrentLocation];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -18,6 +18,7 @@
 @protocol BaseIntroductionViewControllerDelegate <NSObject>
 @optional
 - (void)fetchDealFeedwithPaging:(BOOL)usePaging;
+- (void)refreshBackgroundImageUsingCurrentLocation;
 @end
 
 

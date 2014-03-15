@@ -718,7 +718,7 @@
         [[NSUserDefaults standardUserDefaults]setObject:strLocation forKey:kUserDefinedCityState];
     }
     [self fetchDealFeedwithPaging:NO];
-    [self refreshBackgroundImageUsingCurrentLocationLat:[[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLatitude] andLon:[[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLongitude]];
+    [self refreshBackgroundImageUsingCurrentLocation];
 }
 
 -(void)refreshBackgroundImageUsingCurrentLocationLat:(NSString *)lat andLon:(NSString *)lon;
@@ -749,6 +749,12 @@
     if (alertView.tag ==20) {
         NSLog(@"%@", [alertView textFieldAtIndex:0].text);
     }
+}
+
+#pragma mark - Delegate BaseIntro
+- (void)refreshBackgroundImageUsingCurrentLocation;
+{
+    [self refreshBackgroundImageUsingCurrentLocationLat:[[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLatitude] andLon:[[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLongitude]];
 }
 
 @end
