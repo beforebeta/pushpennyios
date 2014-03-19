@@ -49,10 +49,12 @@
 #pragma mark Actions
 
 - (IBAction)actionDismiss:(id)sender {
+    [_delegate getDefaultFeed];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)actionSkip:(id)sender {
+    [_delegate getDefaultFeed];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -101,7 +103,7 @@
     self.pageControl.currentPage = swipeView.currentPage;
     if (swipeView.currentPage >=(TOTAL_BOARDING_PAGES-1)) {
         //_btnGetStarted.hidden = NO;
-        _btnSkip.hidden = YES;
+        _btnSkip.hidden = NO;
         [self.view bringSubviewToFront:_viewButtons];
     } else {
         [self.view sendSubviewToBack:_viewButtons];

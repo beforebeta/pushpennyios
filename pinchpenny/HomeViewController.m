@@ -757,4 +757,9 @@
     [self refreshBackgroundImageUsingCurrentLocationLat:[[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLatitude] andLon:[[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLongitude]];
 }
 
+- (void)getDefaultFeed;
+{
+    [self initializeRequestForLocation];
+}
+
 @end
