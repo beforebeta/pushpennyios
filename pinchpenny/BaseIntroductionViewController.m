@@ -39,10 +39,19 @@
     self.pageControl.numberOfPages = TOTAL_BOARDING_PAGES;
     self.pageControl.currentPage = 0;
     _btnStart.hidden = YES;
+    
+    UISwipeGestureRecognizer* swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
+    swipeUpGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [_viewButtons addGestureRecognizer:swipeUpGestureRecognizer];
 }
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+- (void)handleSwipeLeft:(UIGestureRecognizer*)recognizer {
+    [self.swipeView scrollToPage:4 duration:0.5];
+    [self.view sendSubviewToBack:_viewButtons];
 }
 
 #pragma mark -
