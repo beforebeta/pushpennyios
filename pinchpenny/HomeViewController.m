@@ -808,6 +808,9 @@
 - (void)getDefaultFeed;
 {
 //    [self initializeRequestForLocation];
+    [self refreshBackgroundImageUsingCurrentLocation];
+    [[NSUserDefaults standardUserDefaults] setObject:@"All Deals" forKey:kUserDefinedCategory];
+    [[NSUserDefaults standardUserDefaults] setObject:@"all" forKey:kUserDefinedCategorySlug];
     [self fetchDealFeedwithPaging:NO];
 }
 
