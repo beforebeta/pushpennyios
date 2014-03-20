@@ -63,7 +63,7 @@
 }
 
 - (IBAction)actionSkip:(id)sender {
-    [_delegate getDefaultFeed];
+    [_delegate getDefaultFeedSkipped];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

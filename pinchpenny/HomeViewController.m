@@ -22,13 +22,16 @@
 #define RESULTS_PER_PAGE @"100"
 #define SEARCH_RADIUS @"100"
 
+#define kTagAlertLocationOff (5)
+#define kTagAlertLocatioNotFound (20)
+
 @interface HomeViewController ()
 {
     BOOL flagMapVisible;
     BOOL flagFeedFetchInProgress;
     NSMutableArray *lastQueryArray;
     CLLocationManager *locationManager;
-    CLGeocoder *geocoder;
+//    CLGeocoder *geocoder;
     CLPlacemark *placemark;
     NSIndexPath *selectedIndexPath;
     UIRefreshControl *refreshControl;
@@ -46,6 +49,8 @@
     
     NSString *strUUID;
 }
+@property (nonatomic, strong) CLGeocoder *geocoder;
+
 @property (weak, nonatomic) IBOutlet UILabel *labelNavTitle;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIView *viewContainer;
@@ -192,7 +197,7 @@
     [[NSUserDefaults standardUserDefaults]setObject:strLat forKey:kUserDefinedLatitude];
     [self fetchDealFeedwithPaging:NO];
     CLLocation *newLocation = [[CLLocation alloc] initWithLatitude:centre.latitude longitude:centre.longitude];
-    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+    [_geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
             placemark = [placemarks lastObject];
@@ -313,34 +318,72 @@
     _labelMenuCategoryMap.text = strCategory;
 }
 
+#pragma mark - Delegate AlertView
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"clickedButtonAtIndex %li",(long)buttonIndex);
+    switch (alertView.tag) {
+        case kTagAlertLocationOff:
+        {
+            NSLog(@"%@", [alertView textFieldAtIndex:0].text);
+            if (buttonIndex == 0) {
+                UIAlertView *alertReminder = [[UIAlertView alloc]
+                                           initWithTitle:kStringLocationOffTitle
+                                           message:kStringLocationOffFoundBody
+                                           delegate:nil
+                                           cancelButtonTitle:@"Ok"
+                                           otherButtonTitles:nil];
+                alertReminder.delegate = self;
+                [alertReminder show];
+                [[NSUserDefaults standardUserDefaults]setObject:kDefaultLatitude forKey:kUserDefinedLatitude];
+                [[NSUserDefaults standardUserDefaults]setObject:kDefaultLongitude forKey:kUserDefinedLongitude];
+                [[NSUserDefaults standardUserDefaults]setObject:kDefaultLocation forKey:kUserDefinedCityState];
+                [self refreshBackgroundImageUsingCurrentLocation];
+                [self fetchDealFeedwithPaging:NO];
+            } else {
+                [self getCoordinateFromString:[alertView textFieldAtIndex:0].text andFetch:YES];
+            }
+        }
+            break;
+        case kTagAlertLocatioNotFound:
+        {
+            if (buttonIndex == 0) {
+                // DO NOTHING
+                [[NSUserDefaults standardUserDefaults]setObject:kDefaultLatitude forKey:kUserDefinedLatitude];
+                [[NSUserDefaults standardUserDefaults]setObject:kDefaultLongitude forKey:kUserDefinedLongitude];
+            } else {
+                NSLog(@"kTagAlertLocatioNotFound [%@]",[alertView textFieldAtIndex:0].text);
+                [self getCoordinateFromString:[alertView textFieldAtIndex:0].text andFetch:YES];
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark - CLLocationManagerDelegate
 
 - (void)getUserLocation;
 {
+    locationManager = [[CLLocationManager alloc] init];
+    _geocoder = [[CLGeocoder alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
-    if ( status == kCLAuthorizationStatusDenied) {
-        NSLog(@"getUserLocation kCLAuthorizationStatusDenied");
-        UIAlertView *errorAlert = [[UIAlertView alloc]
-                                   initWithTitle:@"Deals Nearby?" message:@"We are unable to get your current location. Turn on location in settings to see great deals offered in your neighborhood.  Would you like to enter a zip code instead?" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:@"No Thanks",nil];
-        errorAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
-        errorAlert.delegate = self;
-        errorAlert.tag = 20;
-    } else {
-        [locationManager startUpdatingLocation];
-    }
-    
+    [locationManager startUpdatingLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Location missing" message:@"We are unable to get your current location at the moment. Enter your zip code instead?" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:@"No Thanks",nil];
+                               initWithTitle:kStringLocationNotFoundTitle
+                               message:kStringLocationNotFoundBody
+                               delegate:nil
+                               cancelButtonTitle:@"No thanks"
+                               otherButtonTitles:@"Ok",nil];
     errorAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
     errorAlert.delegate = self;
-    errorAlert.tag = 20;
+    errorAlert.tag = kTagAlertLocatioNotFound;
     [errorAlert show];
     [[NSUserDefaults standardUserDefaults]setObject:kDefaultLatitude forKey:kUserDefinedLatitude];
     [[NSUserDefaults standardUserDefaults]setObject:kDefaultLongitude forKey:kUserDefinedLongitude];
@@ -376,7 +419,7 @@
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
     // Reverse Geocoding
     NSLog(@"Resolving the Address");
-    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+    [_geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
             placemark = [placemarks lastObject];
@@ -693,11 +736,8 @@
     }
 }
 
--(void)openDetailFromLink:(NSString *)url;
-{
-    NSLog(@"HomeViewController openDetailFromLink [%@]",url);
-}
 
+#pragma mark - URL Scheme
 - (void)displayCategoryFromURL:(NSNotification *)notification {
     NSLog(@"displayCategoryFromURL %@", notification.object);
     NSString *keyword = [notification.object objectForKey:kAPNSKeyKeyword];
@@ -734,23 +774,31 @@
 
 }
 
+
+
 -(void)initializeRequestForLocation;
 {
     // Network
     [_activityIndicator startAnimating];
-    // Location
-    locationManager = [[CLLocationManager alloc] init];
-    geocoder = [[CLGeocoder alloc] init];
-    [self getUserLocation];
-}
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"clickedButtonAtIndex %li",(long)buttonIndex);
-    if (alertView.tag ==20) {
-        NSLog(@"%@", [alertView textFieldAtIndex:0].text);
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    if ( status == kCLAuthorizationStatusDenied) {
+        NSLog(@"kCLAuthorizationStatusDeniedd");
+        UIAlertView *errorAlert = [[UIAlertView alloc]
+                                   initWithTitle:@"Location Services Off"
+                                   message:@"You have not authorized location services.  Enter a zip code to see deals nearby."
+                                   delegate:nil cancelButtonTitle:@"No thanks" otherButtonTitles:@"Submit",nil];
+        errorAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        errorAlert.delegate = self;
+        errorAlert.tag = kTagAlertLocationOff;
+        [errorAlert show];
+    } else {
+        [self getUserLocation];
     }
+    // Location
+    
+    
+    
 }
-
 #pragma mark - Delegate BaseIntro
 - (void)refreshBackgroundImageUsingCurrentLocation;
 {
@@ -759,7 +807,54 @@
 
 - (void)getDefaultFeed;
 {
+//    [self initializeRequestForLocation];
+    [self fetchDealFeedwithPaging:NO];
+}
+
+- (void)getDefaultFeedSkipped;
+{
     [self initializeRequestForLocation];
 }
+
+#pragma mark - Reverse GeoCoder
+#pragma mark - geo
+
+-(void)getCoordinateFromString:(NSString *)strAddress andFetch:(BOOL)fetchFeed;
+{
+    if (!self.geocoder) {
+        self.geocoder = [[CLGeocoder alloc] init];
+    }
+    [self.geocoder geocodeAddressString:strAddress completionHandler:^(NSArray *placemarks, NSError *error) {
+        NSLog(@"placemarks = [%@]",placemarks);
+        NSLog(@"error =[%@]",error);
+        if ([placemarks count] > 0) {
+            CLPlacemark *placemarkFromZip= [placemarks objectAtIndex:0];
+            CLLocation *location = placemarkFromZip.location;
+            CLLocationCoordinate2D coordinate = location.coordinate;
+            if (placemarkFromZip.locality && placemarkFromZip.administrativeArea) {
+                NSString *strCityState = [NSString stringWithFormat:@"%@, %@",placemarkFromZip.locality,placemarkFromZip.administrativeArea];
+                [[NSUserDefaults standardUserDefaults]setObject:strCityState forKey:kUserDefinedCityState];
+            }
+            NSString *strLon = [NSString stringWithFormat:@"%.8f", coordinate.longitude];
+            NSString *strLat = [NSString stringWithFormat:@"%.8f", coordinate.latitude];
+            [[NSUserDefaults standardUserDefaults]setObject:strLon forKey:kUserDefinedLongitude];
+            [[NSUserDefaults standardUserDefaults]setObject:strLat forKey:kUserDefinedLatitude];
+            if (fetchFeed) {
+                [self refreshBackgroundImageUsingCurrentLocation];
+                [self fetchDealFeedwithPaging:NO];
+            }
+        } else {
+            UIAlertView *errorAlert = [[UIAlertView alloc]
+                                       initWithTitle:@"Location Not Found"
+                                       message:@"We'll drop you in New York.  You can change this location later"
+                                       delegate:nil
+                                       cancelButtonTitle:@"OK"
+                                       otherButtonTitles:nil];
+            [errorAlert show];
+        }
+    }];
+}
+
+
 
 @end

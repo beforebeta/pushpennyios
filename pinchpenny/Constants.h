@@ -46,4 +46,13 @@ extern NSString* const kAPNSKeyLocation;
 
 extern NSString* const kAPNSValueCategory;
 
+extern NSString* const kStringLocationNotFoundTitle;
+extern NSString* const kStringLocationNotFoundBody;
+
+extern NSString* const kStringLocationEnterZipTitle;
+extern NSString* const kStringLocationEnterZipBody;
+
+extern NSString* const kStringLocationOffTitle;
+extern NSString* const kStringLocationOffFoundBody;
+
 @end

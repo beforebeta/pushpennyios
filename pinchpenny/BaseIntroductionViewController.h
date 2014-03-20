@@ -20,6 +20,7 @@
 - (void)fetchDealFeedwithPaging:(BOOL)usePaging;
 - (void)refreshBackgroundImageUsingCurrentLocation;
 - (void)getDefaultFeed;
+- (void)getDefaultFeedSkipped;
 @end
 
 
