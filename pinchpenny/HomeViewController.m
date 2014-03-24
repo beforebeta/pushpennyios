@@ -74,7 +74,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(YES){
+    if(![[NSUserDefaults standardUserDefaults]boolForKey:kTutorialHasSeenBoarding]){
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:kTutorialHasSeenBoarding];
         [self performSegueWithIdentifier:@"boarding" sender:self];
     } else {
         [self initializeRequestForLocation];
