@@ -126,7 +126,7 @@
     [[self.navigationController.navigationBar.subviews objectAtIndex:1] addGestureRecognizer:navSingleTap];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navSingleTap) name:@"touchStatusBarClick" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(displayCategoryFromURL:)
+                                             selector:@selector(handleDataFromURL:)
                                                  name:@"handlingOpenURL"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -297,6 +297,23 @@
     NSString *strLat = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLatitude];
     NSString *strLon = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLongitude];
 //    NSString *feedURL = @"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we";
+    NSString *feedURL = [NSString stringWithFormat:@"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we&location=%@,%@",strLat,strLon];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:feedURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"fetchCategoryKeywordFeed [%@]", responseObject);
+        NSString *url = [responseObject objectForKey:@"default_image"];
+        [self setBackgroundImageWithURL:url];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+}
+
+- (void)fetchSingleDeal:(NSString *)dealid;
+{
+    NSString *strLat = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLatitude];
+    NSString *strLon = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLongitude];
+    //    NSString *feedURL = @"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we";
     NSString *feedURL = [NSString stringWithFormat:@"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we&location=%@,%@",strLat,strLon];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:feedURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -739,27 +756,41 @@
 
 
 #pragma mark - URL Scheme
-- (void)displayCategoryFromURL:(NSNotification *)notification {
-    NSLog(@"displayCategoryFromURL %@", notification.object);
-    NSString *keyword = [notification.object objectForKey:kAPNSKeyKeyword];
-    if (keyword) {
-        [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategory];
-        [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategorySlug];
+- (void)handleDataFromURL:(NSNotification *)notification {
+    NSLog(@"handleDataFromURL %@", notification.object);
+    
+    NSString *type = [notification.object objectForKey:kAPNSKeyFeedType];
+    if (type) {
+        if ([type isEqualToString:kAPNSValueCategory]) {
+            //SET UP CATEOGORY VIEW
+            NSString *keyword = [notification.object objectForKey:kAPNSKeyKeyword];
+            if (keyword) {
+                [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategory];
+                [[NSUserDefaults standardUserDefaults] setObject:keyword forKey:kUserDefinedCategorySlug];
+            }
+            NSString *strLat = [notification.object objectForKey:kAPNSKeyLatitude];
+            if (strLat) {
+                [[NSUserDefaults standardUserDefaults]setObject:strLat forKey:kUserDefinedLatitude];
+            }
+            NSString *strLon = [notification.object objectForKey:kAPNSKeyLongitude];
+            if (strLon) {
+                [[NSUserDefaults standardUserDefaults]setObject:strLon forKey:kUserDefinedLongitude];
+            }
+            NSString *strLocation = [notification.object objectForKey:kAPNSKeyLocation];
+            if (strLocation) {
+                [[NSUserDefaults standardUserDefaults]setObject:strLocation forKey:kUserDefinedCityState];
+            }
+            NSLog(@"SET UP CATEOGORY VIEW = [%@][%@][%@][%@]",keyword,strLat,strLon,strLocation);
+            [self fetchDealFeedwithPaging:NO];
+            [self refreshBackgroundImageUsingCurrentLocation];
+        } else if ([type isEqualToString:kAPNSValueDeal]) {
+            //SET UP DEAL DETAIL
+            NSString *dealid = [notification.object objectForKey:kAPNSValueDealID];
+            NSLog(@"SET UP DEAL DETAIL = [%@]",dealid);
+        }
     }
-    NSString *strLat = [notification.object objectForKey:kAPNSKeyLatitude];
-    if (strLat) {
-        [[NSUserDefaults standardUserDefaults]setObject:strLat forKey:kUserDefinedLatitude];
-    }
-    NSString *strLon = [notification.object objectForKey:kAPNSKeyLongitude];
-    if (strLon) {
-        [[NSUserDefaults standardUserDefaults]setObject:strLon forKey:kUserDefinedLongitude];
-    }
-    NSString *strLocation = [notification.object objectForKey:kAPNSKeyLocation];
-    if (strLocation) {
-        [[NSUserDefaults standardUserDefaults]setObject:strLocation forKey:kUserDefinedCityState];
-    }
-    [self fetchDealFeedwithPaging:NO];
-    [self refreshBackgroundImageUsingCurrentLocation];
+    
+    
 }
 
 -(void)refreshBackgroundImageUsingCurrentLocationLat:(NSString *)lat andLon:(NSString *)lon;

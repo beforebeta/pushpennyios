@@ -45,6 +45,8 @@ extern NSString* const kAPNSKeyLongitude;
 extern NSString* const kAPNSKeyLocation;
 
 extern NSString* const kAPNSValueCategory;
+extern NSString* const kAPNSValueDeal;
+extern NSString* const kAPNSValueDealID;
 
 extern NSString* const kStringLocationNotFoundTitle;
 extern NSString* const kStringLocationNotFoundBody;
@@ -56,3 +58,32 @@ extern NSString* const kStringLocationOffTitle;
 extern NSString* const kStringLocationOffFoundBody;
 
 @end
+
+/*
+ 
+ SINGLE DEAL
+ http://api.pushpenny.com/v3/deal?api_key=h7n8we&ref_id=1711200
+ 
+ URL
+ 
+ pushpenny://api?fd=dl&id=1711200
+ 
+ pushpenny://api?fd=ct&key=bags&lt=37.7749295&ln=-122.4194155&lc=San%20Francisco
+ 
+ // APNS
+ 
+ [{
+ "_" = uZyrIKsHEeOPigAbIbyL6A;
+ aps = {
+ alert = "single device 3";
+ badge = 1;
+ sound = "bingbong.aiff";
+ };
+ fd = ct;
+ ky = Shoes;
+ lc = "San Francisco";
+ ln = "-122.4194155";
+ lt = "37.7749295";
+ }]
+ 
+ */

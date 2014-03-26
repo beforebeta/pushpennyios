@@ -34,6 +34,8 @@
  NSString* const kAPNSKeyLocation           = @"lc";
 
  NSString* const kAPNSValueCategory         = @"ct";
+ NSString* const kAPNSValueDeal             = @"dl";
+ NSString* const kAPNSValueDealID           = @"id";
 
  NSString* const kStringLocationNotFoundTitle   = @"Can't Find Your Location";
  NSString* const kStringLocationNotFoundBody    = @"We are unable to get your current location at the moment. Giving us your location allows us to automatically show you deals nearby. Enter your zip code or city instead?";

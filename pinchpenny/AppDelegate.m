@@ -93,16 +93,30 @@
     NSDictionary *messagecontent = userInfo;
     NSString *feedtype = [messagecontent objectForKey:kAPNSKeyFeedType];
     if (feedtype && [feedtype isEqualToString:kAPNSValueCategory]) {
-        NSString *keyword = [messagecontent objectForKey:kAPNSKeyKeyword];
-        NSString *latitude = [messagecontent objectForKey:kAPNSKeyLatitude];
-        NSString *longitude = [messagecontent objectForKey:kAPNSKeyLongitude];
-        NSString *location = [messagecontent objectForKey:kAPNSKeyLocation];
-        NSDictionary *dict = [[NSDictionary alloc]initWithObjectsAndKeys:
-                              keyword,kAPNSKeyKeyword,
-                              latitude,kAPNSKeyLatitude,
-                              longitude,kAPNSKeyLongitude,
-                              location,kAPNSKeyLocation,nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"handlingOpenURL" object:dict];
+        NSDictionary *dictForAPI;
+        if ([feedtype isEqualToString:kAPNSValueCategory]) {
+            // CATEGORY FEED
+            NSString *type = [messagecontent objectForKey:kAPNSKeyFeedType];
+            NSString *keyword = [messagecontent objectForKey:kAPNSKeyKeyword];
+            NSString *latitude = [messagecontent objectForKey:kAPNSKeyLatitude];
+            NSString *longitude = [messagecontent objectForKey:kAPNSKeyLongitude];
+            NSString *location = [messagecontent objectForKey:kAPNSKeyLocation];
+             dictForAPI= [[NSDictionary alloc]initWithObjectsAndKeys:
+                                    type,kAPNSKeyFeedType,
+                                  keyword,kAPNSKeyKeyword,
+                                  latitude,kAPNSKeyLatitude,
+                                  longitude,kAPNSKeyLongitude,
+                                  location,kAPNSKeyLocation,nil];
+        } else if ([feedtype isEqualToString:kAPNSValueDeal]) {
+            // DEAL FEED
+            NSString *type = [messagecontent objectForKey:kAPNSKeyFeedType];
+            NSString *dealid = [messagecontent objectForKey:kAPNSValueDealID];
+            dictForAPI= [[NSDictionary alloc]initWithObjectsAndKeys:
+                         type,kAPNSKeyFeedType,
+                         dealid,kAPNSValueDealID,
+                         nil];
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"handlingOpenURL" object:dictForAPI];
     }
 }
 
@@ -116,7 +130,8 @@
         NSDictionary *dict = [self parseQueryString:[url query]];
         NSLog(@"query dict: %@", dict);
         NSString *apicall = [dict objectForKey:kAPNSKeyFeedType];
-        if ([apicall isEqualToString:kAPNSValueCategory]) {
+        if ([apicall isEqualToString:kAPNSValueCategory] ||
+            [apicall isEqualToString:kAPNSValueDeal]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"handlingOpenURL" object:dict];
         }
         
@@ -146,6 +161,7 @@
 
 #pragma mark - Utility
 
+// Creates a directory from URL string
 - (NSDictionary *)parseQueryString:(NSString *)query {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     NSArray *pairs = [query componentsSeparatedByString:@"&"];
