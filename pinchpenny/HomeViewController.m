@@ -296,7 +296,8 @@
 {
     NSString *strLat = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLatitude];
     NSString *strLon = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLongitude];
-//    NSString *feedURL = @"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we";
+    //  Sample URL for category feed
+    //  NSString *feedURL = @"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we";
     NSString *feedURL = [NSString stringWithFormat:@"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we&location=%@,%@",strLat,strLon];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:feedURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -311,15 +312,14 @@
 
 - (void)fetchSingleDeal:(NSString *)dealid;
 {
-    NSString *strLat = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLatitude];
-    NSString *strLon = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefinedLongitude];
-    //    NSString *feedURL = @"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we";
-    NSString *feedURL = [NSString stringWithFormat:@"http://api.pushpenny.com/v2/localinfo?api_key=h7n8we&location=%@,%@",strLat,strLon];
+    //  Sample URL for single deal feed
+    //  NSString *feedURL = @"http://api.pushpenny.com/v3/deal?api_key=h7n8we&ref_id=1711200";
+    NSString *feedURL = [NSString stringWithFormat:@"http://api.pushpenny.com/v3/deal?api_key=h7n8we&ref_id=%@",dealid];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:feedURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"fetchCategoryKeywordFeed [%@]", responseObject);
-        NSString *url = [responseObject objectForKey:@"default_image"];
-        [self setBackgroundImageWithURL:url];
+        NSLog(@"fetchSingleDeal [%@]", responseObject);
+        selectedDictionary = responseObject;
+        [self performSegueWithIdentifier:@"DetailView2" sender:self];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -787,6 +787,7 @@
             //SET UP DEAL DETAIL
             NSString *dealid = [notification.object objectForKey:kAPNSValueDealID];
             NSLog(@"SET UP DEAL DETAIL = [%@]",dealid);
+            [self fetchSingleDeal:dealid];
         }
     }
     
